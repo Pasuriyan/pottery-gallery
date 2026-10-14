@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Blog | Handmade Pottery & Ceramics</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Existing Common CSS -->
+    <link rel="stylesheet" href="common.css">
+
+    <style>
+        :root {
+            --pottery-green: #39452b;
+            --pottery-cream: #f7f4ed;
+            --pottery-brown: #9b7153;
+            --pottery-border: #e5ded2;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .blog-section {
+            padding: 65px 0;
+        }
+
+        .blog-container {
+            width: min(1200px, 92%);
+            margin: auto;
+        }
+
+        .blog-heading {
+            margin-bottom: 30px;
+        }
+
+        .blog-heading h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .blog-heading p {
+            color: var(--bs-secondary-color);
+            margin-bottom: 0;
+        }
+
+        .blog-eyebrow {
+            display: inline-block;
+            color: var(--pottery-brown);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .blog-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--pottery-border);
+            border-radius: 12px;
+            background: var(--bs-body-bg);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .10);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform .5s ease;
+        }
+
+        .blog-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .blog-image-wrap {
+            overflow: hidden;
+        }
+
+        .blog-card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .blog-category {
+            color: var(--pottery-brown);
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .blog-card h3 {
+            font-size: 20px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .blog-card p {
+            font-size: 14px;
+            color: var(--bs-secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .blog-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 12px;
+            color: var(--bs-secondary-color);
+            margin-top: auto;
+            margin-bottom: 15px;
+        }
+
+        .blog-meta i {
+            margin-right: 5px;
+        }
+
+        .blog-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 17px;
+            background: var(--pottery-green);
+            color: #fff;
+            border: 1px solid var(--pottery-green);
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all .25s ease;
+        }
+
+        .blog-btn:hover {
+            background: transparent;
+            color: var(--bs-body-color);
+        }
+
+        .blog-hero {
+            min-height: 340px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, rgba(25, 24, 19, .82), rgba(25, 24, 19, .12)),
+                url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1800&q=85')
+                center 55% / cover no-repeat;
+            color: #fff;
+        }
+
+        .blog-hero-content {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 60px 0;
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            max-width: 650px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .blog-hero p {
+            max-width: 540px;
+            font-size: 16px;
+        }
+
+        .blog-soft {
+            background: var(--pottery-cream);
+            color: #292920;
+        }
+
+        .blog-featured {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .blog-featured > img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .blog-featured h3 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 16px;
+        }
+
+        .blog-featured p {
+            color: var(--bs-secondary-color);
+        }
+
+        .blog-workshop-card {
+            padding: 28px 20px;
+            border: 1px solid var(--pottery-border);
+            border-radius: 12px;
+            background: var(--bs-body-bg);
+            height: 100%;
+        }
+
+        .blog-workshop-card i {
+            font-size: 30px;
+            color: var(--pottery-brown);
+            margin-bottom: 18px;
+        }
+
+        .blog-gallery-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 14px;
+        }
+
+        .blog-newsletter {
+            color: #fff;
+            background:
+                linear-gradient(rgba(30, 28, 21, .88), rgba(30, 28, 21, .88)),
+                url('https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&fit=crop&w=1600&q=85')
+                center / cover no-repeat;
+        }
+
+        .blog-newsletter .form-control {
+            min-height: 48px;
+        }
+
+        .blog-newsletter .blog-btn {
+            min-height: 48px;
+            background: #fff;
+            color: #292920;
+            border-color: #fff;
+        }
+
+        .blog-newsletter .blog-btn:hover {
+            background: transparent;
+            color: #fff;
+        }
+
+        .blog-newsletter .form-control:focus {
+            box-shadow: 0 0 0 .2rem rgba(255,255,255,.2);
+            border-color: var(--pottery-brown);
+        }
+
+        @media (max-width: 991px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .blog-featured > img {
+                height: 330px;
+            }
+
+            .blog-section {
+                padding: 50px 0;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .blog-hero {
+                min-height: 300px;
+            }
+
+            .blog-featured {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .blog-featured > img {
+                height: 260px;
+            }
+
+            .blog-card img {
+                height: 230px;
+            }
+
+            .blog-heading h2 {
+                font-size: 1.8rem;
+            }
+
+            .blog-section {
+                padding: 40px 0;
+            }
+        }
+
+        [dir="rtl"] .blog-meta i {
+            margin-right: 0;
+            margin-left: 5px;
+        }
+
+        [dir="rtl"] .blog-hero {
+            background-image:
+                linear-gradient(270deg, rgba(25, 24, 19, .82), rgba(25, 24, 19, .12)),
+                url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1800&q=85');
+        }
+        /* =========================================
+   BLOG PAGE — DARK MODE TEXT VISIBILITY FIX
+========================================= */
+
+/* Default text colors follow Bootstrap theme */
+body {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+}
+
+/* Blog headings */
+.blog-heading h2,
+.blog-card h3,
+.blog-featured h3,
+.blog-workshop-card h3 {
+    color: var(--bs-heading-color);
+}
+
+/* Blog descriptions */
+.blog-heading p,
+.blog-card p,
+.blog-featured p,
+.blog-workshop-card p {
+    color: var(--bs-secondary-color);
+}
+
+/* Blog cards */
+.blog-card,
+.blog-workshop-card {
+    background-color: var(--bs-tertiary-bg);
+    border-color: var(--bs-border-color);
+}
+
+/* Featured content section */
+.blog-featured {
+    color: var(--bs-body-color);
+}
+
+/* Dark mode overrides */
+[data-bs-theme="dark"] body {
+    color: #f5f0e8;
+    background-color: #171513;
+}
+
+[data-bs-theme="dark"] .blog-heading h2,
+[data-bs-theme="dark"] .blog-card h3,
+[data-bs-theme="dark"] .blog-featured h3,
+[data-bs-theme="dark"] .blog-workshop-card h3 {
+    color: #f5f0e8 !important;
+}
+
+[data-bs-theme="dark"] .blog-heading p,
+[data-bs-theme="dark"] .blog-card p,
+[data-bs-theme="dark"] .blog-featured p,
+[data-bs-theme="dark"] .blog-workshop-card p {
+    color: #c9c3ba !important;
+}
+
+/* Blog cards in dark mode */
+[data-bs-theme="dark"] .blog-card,
+[data-bs-theme="dark"] .blog-workshop-card {
+    background-color: #211e1b;
+    border-color: #49433c;
+}
+
+/* Featured guide section */
+[data-bs-theme="dark"] .blog-featured {
+    color: #f5f0e8;
+}
+
+/* Blog metadata */
+[data-bs-theme="dark"] .blog-meta {
+    color: #c9c3ba;
+}
+
+/* Product prices and strong text */
+[data-bs-theme="dark"] .blog-card strong {
+    color: #e4c19a;
+}
+
+/* Blog category labels */
+.blog-category,
+.blog-eyebrow {
+    color: #a66b43;
+}
+
+[data-bs-theme="dark"] .blog-category,
+[data-bs-theme="dark"] .blog-eyebrow {
+    color: #e0aa7c;
+}
+
+/* Keep soft sections readable in dark mode */
+[data-bs-theme="dark"] .blog-soft {
+    background-color: #1c1916;
+    color: #f5f0e8;
+}
+
+/* Newsletter section */
+.blog-newsletter {
+    color: #fff;
+}
+
+.blog-newsletter h2,
+.blog-newsletter h3,
+.blog-newsletter p {
+    color: #fff !important;
+}
+
+/* Buttons */
+.blog-btn {
+    color: #fff;
+}
+
+.blog-btn:hover {
+    color: var(--bs-body-color);
+}
+
+/* RTL and responsive layouts remain unchanged */
+    </style>
+</head>
+
+<body>
+
+ <header class="site-navbar">
+
+        <div class="container-custom navbar-inner">
+
+            <!-- LOGO -->
+
+            <a href="index.html" class="brand">
+
+                <img
+                    src="assets/images/logo.png"
+                    
+                >
+
+                <span>Clay & Co.</span>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="nav-menu"
+                id="navMenu"
+                aria-label="Main navigation"
+            >
+
+                <!-- HOME DROPDOWN -->
+
+                <div class="nav-dropdown">
+
+                    <a
+                        href="#"
+                        class="nav-link dropdown-toggle-custom"
+                        aria-expanded="false"
+                    >
+
+                        Home
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </a>
+
+                    <div class="dropdown-menu-custom">
+
+                        <a href="index.html">
+                            Home 1
+                        </a>
+
+                        <a href="home2.html">
+                            Home 2
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a href="shop.html" class="nav-link">
+                    Shop
+                </a>
+
+                <a
+                    href="artist-spotlight.html"
+                    class="nav-link"
+                >
+                    Artist Spotlight
+                </a>
+
+                <a href="blog.html" class="nav-link">
+                    Blog
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- ACTION BUTTONS -->
+
+            <div class="nav-actions">
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="themeToggle"
+                    aria-label="Switch to dark mode"
+                    title="Toggle dark mode"
+                >
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="directionToggle"
+                    aria-label="Switch to right-to-left layout"
+                    title="Toggle RTL"
+                >
+
+                    <i
+                        class="fa-solid fa-arrow-right-arrow-left"
+                    ></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="icon-button menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navMenu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+<!-- ==========================================
+     1. BLOG HERO SECTION
+=========================================== -->
+<section class="pottery-blog-hero" id="blog-hero">
+  <style>
+    .pottery-blog-hero {
+      --blog-bg: #f5f1e9;
+      --blog-card: #fffdf9;
+      --blog-text: #263c39;
+      --blog-muted: #737b73;
+      --blog-accent: #b86f50;
+      background: var(--blog-bg);
+      color: var(--blog-text);
+      padding: 70px 6% 40px;
+      font-family: "DM Sans", sans-serif;
+    }
+    .pottery-blog-hero * {
+      box-sizing: border-box;
+    }
+    .hero-container {
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+    /* Top Heading */
+    .hero-intro {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 40px;
+    }
+    .hero-eyebrow {
+      color: var(--blog-accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .hero-intro h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.18;
+      margin: 0 0 16px;
+    }
+    .hero-intro p {
+      color: var(--blog-muted);
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 0;
+    }
+    /* Category Filter Pills */
+    .hero-categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 45px;
+    }
+    .cat-pill {
+      background: var(--blog-card);
+      color: var(--blog-text);
+      border: 1px solid rgba(38, 60, 57, 0.12);
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .cat-pill:hover,
+    .cat-pill.active {
+      background: var(--blog-accent);
+      color: #ffffff;
+      border-color: var(--blog-accent);
+    }
+    /* Hero Featured Spotlight Card */
+    .hero-featured-card {
+      background: var(--blog-card);
+      border-radius: 18px;
+      border: 1px solid rgba(38, 60, 57, 0.09);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      box-shadow: 0 20px 45px rgba(38, 60, 57, 0.08);
+      transition: transform 0.3s ease;
+    }
+    .hero-featured-card:hover {
+      transform: translateY(-4px);
+    }
+    .hero-featured-img-wrap {
+      position: relative;
+      height: 100%;
+      min-height: 380px;
+    }
+    .hero-featured-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .featured-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: var(--blog-accent);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 6px 14px;
+      border-radius: 4px;
+    }
+    .hero-featured-content {
+      padding: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .featured-meta {
+      font-size: 13px;
+      color: var(--blog-muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-featured-content h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.3;
+      margin: 0 0 16px;
+    }
+    .hero-featured-content p {
+      color: var(--blog-muted);
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 0 0 25px;
+    }
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+    .author-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .author-details strong {
+      display: block;
+      font-size: 14px;
+    }
+    .author-details span {
+      font-size: 12px;
+      color: var(--blog-muted);
+    }
+    .hero-featured-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blog-accent);
+      color: #fff !important;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+    .hero-featured-btn:hover {
+      opacity: 0.9;
+    }
+    /* Dark Mode */
+    html[data-theme="dark"] .pottery-blog-hero {
+      --blog-bg: #172522;
+      --blog-card: #22332f;
+      --blog-text: #f2ece2;
+      --blog-muted: #bdc8c0;
+      --blog-accent: #d99a79;
+    }
+    html[data-theme="dark"] .hero-featured-card,
+    html[data-theme="dark"] .cat-pill {
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-featured-card {
+        grid-template-columns: 1fr;
+      }
+      .hero-featured-img-wrap {
+        height: 280px;
+        min-height: auto;
+      }
+      .hero-featured-content {
+        padding: 30px;
+      }
+    }
+  </style>
+  <div class="hero-container">
+    <!-- Header -->
+    <div class="hero-intro">
+      <span class="hero-eyebrow">The Ceramic Journal</span>
+      <h1>Stories from the Wheel, Kiln & Studio</h1>
+      <p>
+        Explore the philosophy of handmade ceramics, step-by-step glaze chemistry,
+        studio tours, and inspiration for tactile living.
+      </p>
+    </div>
+  
+    <!-- Featured Story Card -->
+    <div class="hero-featured-card">
+      <div class="hero-featured-img-wrap">
+        <img class="hero-featured-img" 
+             src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1200&q=85" 
+             alt="Potter shaping a celadon clay vessel">
+        <span class="featured-badge">Featured Essay</span>
+      </div>
+      <div class="hero-featured-content">
+        <div class="featured-meta">
+          <span>Behind the Kiln</span> · <span>8 min read</span>
+        </div>
+        <h2>In Search of the Perfect Celadon: The Alchemy of High-Fire Glaze</h2>
+        <p>
+          Master ceramicist Clara Vance shares how mineral reduction and iron oxide 
+          turn coarse earth into jade-like translucent tableware through 18 hours of wood firing.
+        </p>
+        
+        <div class="author-info">
+          <img class="author-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Clara Vance">
+          <div class="author-details">
+            <strong>Clara Vance</strong>
+            <span>Resident Potter & Glaze Chemist</span>
+          </div>
+        </div>
+        <a href="#blog" class="hero-featured-btn">
+          Explore Studio Stories <span>↓</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG SECTION: 6 ARTICLES ================= -->
+<section class="pottery-blog-section" id="blog">
+  <style>
+    .pottery-blog-section {
+      --blog-bg: #f5f1e9;
+      --blog-card: #fffdf9;
+      --blog-text: #263c39;
+      --blog-muted: #737b73;
+      --blog-accent: #b86f50;
+      background: var(--blog-bg);
+      color: var(--blog-text);
+      padding: 85px 6%;
+      font-family: "DM Sans", sans-serif;
+      position: relative;
+    }
+
+    .pottery-blog-section * {
+      box-sizing: border-box;
+    }
+
+    .pottery-blog-heading {
+      max-width: 720px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .pottery-blog-heading .eyebrow {
+      color: var(--blog-accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .pottery-blog-heading h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.2;
+      margin: 14px 0;
+    }
+
+    .pottery-blog-heading p {
+      color: var(--blog-muted);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .pottery-blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+      max-width: 1250px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+
+    .pottery-blog-card {
+      background: var(--blog-card);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      border: 1px solid rgba(38, 60, 57, .08);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .pottery-blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 38px rgba(38, 60, 57, .12);
+    }
+
+    .pottery-blog-image {
+      width: 100%;
+      height: 245px;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+
+    .pottery-blog-card:hover .pottery-blog-image {
+      transform: scale(1.04);
+    }
+
+    .pottery-blog-image-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .pottery-blog-category {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      background: #fffdf9;
+      color: #704a38;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .pottery-blog-content {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: flex-start;
+    }
+
+    .pottery-blog-meta {
+      color: var(--blog-muted);
+      font-size: 12px;
+      margin-bottom: 13px;
+    }
+
+    .pottery-blog-content h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 23px;
+      line-height: 1.35;
+      margin: 0 0 12px;
+    }
+
+    .pottery-blog-content p {
+      color: var(--blog-muted);
+      font-size: 14px;
+      line-height: 1.8;
+      margin: 0 0 22px;
+    }
+
+    /* Changed from <a> to button with identical look */
+    .pottery-blog-readmore {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: auto;
+      padding: 12px 18px;
+      border: 1px solid var(--blog-accent);
+      border-radius: 5px;
+      background: var(--blog-accent);
+      color: #fff !important;
+      text-decoration: none !important;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    .pottery-blog-readmore:hover {
+      background: transparent;
+      color: var(--blog-accent) !important;
+    }
+
+    .pottery-blog-readmore span {
+      transition: transform .25s ease;
+    }
+
+    .pottery-blog-readmore:hover span {
+      transform: translateX(4px);
+    }
+
+    /* --- On-Page Detail Modal Card --- */
+    .blog-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 21, 0.72);
+      backdrop-filter: blur(6px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .blog-modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .blog-modal-card {
+      background: var(--blog-card);
+      color: var(--blog-text);
+      width: 100%;
+      max-width: 820px;
+      max-height: 88vh;
+      border-radius: 16px;
+      border: 1px solid rgba(38, 60, 57, 0.12);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;
+      position: relative;
+      transform: translateY(25px) scale(0.97);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .blog-modal-backdrop.active .blog-modal-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .blog-modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: var(--blog-card);
+      color: var(--blog-text);
+      border: 1px solid rgba(128, 128, 128, 0.2);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+      z-index: 10;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .blog-modal-close:hover {
+      background: var(--blog-accent);
+      color: #fff;
+      transform: rotate(90deg);
+    }
+
+    .blog-modal-body {
+      padding: 35px 40px;
+    }
+
+    .blog-modal-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 25px;
+    }
+
+    .blog-modal-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .blog-modal-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      color: var(--blog-muted);
+    }
+
+    .blog-modal-category {
+      background: rgba(184, 111, 80, 0.15);
+      color: var(--blog-accent);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .blog-modal-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(26px, 3.5vw, 34px);
+      line-height: 1.25;
+      margin: 0 0 18px;
+    }
+
+    .blog-modal-text {
+      color: var(--blog-text);
+      line-height: 1.85;
+      font-size: 15.5px;
+      opacity: 0.92;
+      margin-bottom: 20px;
+    }
+
+    .blog-modal-quote {
+      border-left: 3px solid var(--blog-accent);
+      padding: 12px 20px;
+      margin: 24px 0;
+      font-style: italic;
+      color: var(--blog-text);
+      background: rgba(184, 111, 80, 0.06);
+      border-radius: 0 8px 8px 0;
+      line-height: 1.6;
+    }
+
+    .blog-modal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(128, 128, 128, 0.15);
+    }
+
+    .blog-tag {
+      font-size: 12px;
+      color: var(--blog-muted);
+      background: rgba(128, 128, 128, 0.08);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Tablet */
+    @media (max-width: 992px) {
+      .pottery-blog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+      .pottery-blog-image {
+        height: 230px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 576px) {
+      .pottery-blog-section {
+        padding: 55px 18px;
+      }
+      .pottery-blog-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+      .pottery-blog-image {
+        height: 240px;
+      }
+      .pottery-blog-content {
+        padding: 22px;
+      }
+      .pottery-blog-content h3 {
+        font-size: 22px;
+      }
+      .blog-modal-body {
+        padding: 24px 20px;
+      }
+      .blog-modal-gallery {
+        grid-template-columns: 1fr;
+      }
+      .blog-modal-img {
+        height: 200px;
+      }
+    }
+
+    /* Dark mode */
+    html[data-theme="dark"] .pottery-blog-section {
+      --blog-bg: #172522;
+      --blog-card: #22332f;
+      --blog-text: #f2ece2;
+      --blog-muted: #bdc8c0;
+      --blog-accent: #d99a79;
+    }
+
+    html[data-theme="dark"] .pottery-blog-category {
+      background: #22332f;
+      color: #f2ece2;
+    }
+
+    html[data-theme="dark"] .pottery-blog-card {
+      border-color: rgba(255,255,255,.08);
+    }
+
+    html[data-theme="dark"] .blog-modal-card {
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    html[data-theme="dark"] .blog-modal-close {
+      background: #172522;
+    }
+  </style>
+
+  <div class="pottery-blog-heading">
+    <span class="eyebrow">Stories from the studio</span>
+    <h2>Discover the Art of Pottery</h2>
+    <p>
+      Explore the beauty of handmade ceramics, meet the makers behind
+      every piece, and find inspiration for bringing artisanal pottery
+      into your everyday life.
+    </p>
+  </div>
+
+  <div class="pottery-blog-grid">
+
+    <!-- Blog 1 -->
+    <article class="pottery-blog-card">
+      <div class="pottery-blog-image-wrap">
+        <img class="pottery-blog-image"
+          src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&fit=crop&w=900&q=85"
+          alt="Handcrafted ceramic pottery arranged in an artisan studio"
+          loading="lazy">
+        <span class="pottery-blog-category">Pottery Basics</span>
+      </div>
+      <div class="pottery-blog-content">
+        <div class="pottery-blog-meta">October 05, 2026 · 5 min read</div>
+        <h3>The Beauty of Handmade Pottery</h3>
+        <p>
+          Discover what makes handmade pottery special, from the subtle
+          marks left by the artist to the character of every unique piece.
+        </p>
+        <button type="button" class="pottery-blog-readmore" data-blog-id="1">
+          Read More <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </article>
+
+    <!-- Blog 2 -->
+    <article class="pottery-blog-card">
+      <div class="pottery-blog-image-wrap">
+        <img class="pottery-blog-image"
+          src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=900&q=85"
+          alt="Potter shaping clay on a pottery wheel"
+          loading="lazy">
+        <span class="pottery-blog-category">Behind the Scenes</span>
+      </div>
+      <div class="pottery-blog-content">
+        <div class="pottery-blog-meta">September 28, 2026 · 7 min read</div>
+        <h3>From Raw Clay to a Beautiful Creation</h3>
+        <p>
+          Follow the creative journey of clay as it is shaped, dried,
+          glazed, and fired into a beautiful handmade ceramic object.
+        </p>
+        <button type="button" class="pottery-blog-readmore" data-blog-id="2">
+          Read More <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </article>
+
+    <!-- Blog 3 -->
+    <article class="pottery-blog-card">
+      <div class="pottery-blog-image-wrap">
+        <img class="pottery-blog-image"
+          src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85"
+          alt="Artisan ceramic cups and handcrafted pottery"
+          loading="lazy">
+        <span class="pottery-blog-category">Home Styling</span>
+      </div>
+      <div class="pottery-blog-content">
+        <div class="pottery-blog-meta">September 20, 2026 · 4 min read</div>
+        <h3>Styling Your Home with Ceramic Pieces</h3>
+        <p>
+          Learn how ceramic vases, bowls, and tableware add warmth,
+          texture, and a personal touch to your home interiors.
+        </p>
+        <button type="button" class="pottery-blog-readmore" data-blog-id="3">
+          Read More <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </article>
+
+    <!-- Blog 4 -->
+    <article class="pottery-blog-card">
+      <div class="pottery-blog-image-wrap">
+        <img class="pottery-blog-image"
+          src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=900&q=85"
+          alt="Artist working with handmade ceramic pieces"
+          loading="lazy">
+        <span class="pottery-blog-category">Meet the Artists</span>
+      </div>
+      <div class="pottery-blog-content">
+        <div class="pottery-blog-meta">September 12, 2026 · 6 min read</div>
+        <h3>The Hands and Hearts Behind Every Piece</h3>
+        <p>
+          Get to know the patience, imagination, and craftsmanship
+          that independent ceramic artists bring to their work.
+        </p>
+        <button type="button" class="pottery-blog-readmore" data-blog-id="4">
+          Read More <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </article>
+
+    <!-- Blog 5 -->
+    <article class="pottery-blog-card">
+      <div class="pottery-blog-image-wrap">
+        <img class="pottery-blog-image"
+          src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=900&q=85"
+          alt="Natural-toned handmade pottery and ceramic decor"
+          loading="lazy">
+        <span class="pottery-blog-category">Care Guide</span>
+      </div>
+      <div class="pottery-blog-content">
+        <div class="pottery-blog-meta">September 04, 2026 · 3 min read</div>
+        <h3>How to Care for Your Handmade Ceramics</h3>
+        <p>
+          Keep your favourite pottery looking its best with simple
+          cleaning, storage, and everyday care tips.
+        </p>
+        <button type="button" class="pottery-blog-readmore" data-blog-id="5">
+          Read More <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </article>
+
+    <!-- Blog 6 -->
+    <article class="pottery-blog-card">
+      <div class="pottery-blog-image-wrap">
+        <img class="pottery-blog-image"
+          src="https://images.unsplash.com/photo-1576020799627-aeac74d58066?auto=format&fit=crop&w=900&q=85"
+          alt="Artisan ceramic bowls and pottery with natural textures"
+          loading="lazy">
+        <span class="pottery-blog-category">Slow Living</span>
+      </div>
+      <div class="pottery-blog-content">
+        <div class="pottery-blog-meta">August 26, 2026 · 5 min read</div>
+        <h3>Why Handmade Ceramics Make Meaningful Gifts</h3>
+        <p>
+          Explore thoughtful ceramic gift ideas for housewarmings,
+          celebrations, and the people who appreciate one-of-a-kind art.
+        </p>
+        <button type="button" class="pottery-blog-readmore" data-blog-id="6">
+          Read More <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- On-Page Details Modal -->
+  <div class="blog-modal-backdrop" id="blogModalBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="blog-modal-card">
+      <button type="button" class="blog-modal-close" id="blogModalClose" aria-label="Close article">✕</button>
+      <div class="blog-modal-body" id="blogModalBody">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Modal Script -->
+  <script>
+    (function() {
+      // Extended details and images for each blog article
+      const blogArticles = {
+        "1": {
+          title: "The Beauty of Handmade Pottery",
+          category: "Pottery Basics",
+          meta: "October 05, 2026 · 5 min read",
+          images: [
+            "https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&fit=crop&w=900&q=85",
+            "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=900&q=85"
+          ],
+          quote: "“Perfection is sterile. The slight thumbprint of the potter reminds us that human hands shaped the earth.”",
+          paragraphs: [
+            "Unlike factory-manufactured ceramics that prioritize uniform symmetry, artisanal pottery honors individuality. Every pinch, turn of the wheel, and variation in firing kiln temperatures imparts a unique story onto the clay.",
+            "When you hold a handmade ceramic mug, you feel the texture of grog, the natural undertones of mineral glazes, and subtle ridges where the potter's fingers guided the spinning wall upward. These nuanced variations are not defects—they are marks of origin and soul."
+          ],
+          tags: ["Artisanal Craft", "Wabi-Sabi", "Wheel Throwing", "Ceramic Clay"]
+        },
+        "2": {
+          title: "From Raw Clay to a Beautiful Creation",
+          category: "Behind the Scenes",
+          meta: "September 28, 2026 · 7 min read",
+          images: [
+            "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=900&q=85",
+            "https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?auto=format&fit=crop&w=900&q=85"
+          ],
+          quote: "“Clay requires humility. It cannot be rushed, forced, or hurried through drying.”",
+          paragraphs: [
+            "The journey begins with wedging—a kneading technique that expels trapped air bubbles and homogenizes the moisture content. Once centered on the wheel, the clay is guided upward through steady pressure.",
+            "After trimming at the leather-hard stage, the piece rests for over a week before its first bisque firing at 1,800°F. Glaze application follows, concluded by a 2,200°F vitrification firing that turns porous earth into durable stoneware."
+          ],
+          tags: ["Kiln Firing", "Glaze Chemistry", "Studio Process", "Stoneware"]
+        },
+        "3": {
+          title: "Styling Your Home with Ceramic Pieces",
+          category: "Home Styling",
+          meta: "September 20, 2026 · 4 min read",
+          images: [
+            "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85",
+            "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=900&q=85"
+          ],
+          quote: "“Natural textures ground a modern space, creating balance between sleek minimalism and organic warmth.”",
+          paragraphs: [
+            "Ceramics serve as functional sculpture. A solitary matte-glazed vase on a low oak sideboard makes a quiet, confident statement without demanding visual noise.",
+            "Group pottery pieces in odd numbers (threes or fives) with differing heights and neck contours. Pairing earthy terracotta with raw linen napkins and warm ambient lighting creates an inviting tactile home environment."
+          ],
+          tags: ["Interior Styling", "Minimal Living", "Home Decor", "Tactile Textures"]
+        },
+        "4": {
+          title: "The Hands and Hearts Behind Every Piece",
+          category: "Meet the Artists",
+          meta: "September 12, 2026 · 6 min read",
+          images: [
+            "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=900&q=85",
+            "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=900&q=85"
+          ],
+          quote: "“We are not just selling bowls; we are sharing hours of patient experimentation and studio quiet.”",
+          paragraphs: [
+            "Our studio houses resident potters who spend decades mastering glaze formulation and weight balance. Every artisan develops their signature palette—some inspired by desert sandstone, others by tidal riverbanks.",
+            "By supporting local ceramists, you sustain age-old craft heritage and ethical slow production practices that counter fast-furniture and throwaway culture."
+          ],
+          tags: ["Maker Spotlight", "Studio Culture", "Craftsmanship", "Slow Design"]
+        },
+        "5": {
+          title: "How to Care for Your Handmade Ceramics",
+          category: "Care Guide",
+          meta: "September 04, 2026 · 3 min read",
+          images: [
+            "https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=900&q=85",
+            "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85"
+          ],
+          quote: "“Treated with gentle attention, high-fired stoneware will endure through generations of daily use.”",
+          paragraphs: [
+            "Handmade stoneware is resilient, yet sudden thermal shock (such as pouring boiling water into a refrigerator-cold vessel) should be avoided. Gradual temperature transitions keep glazes pristine.",
+            "While most high-fired pieces are dishwasher-safe, hand washing with mild soap preserves satin-matte glazes and prevents accidental rim chipping against cutlery."
+          ],
+          tags: ["Care Tips", "Longevity", "Dishwasher Safe", "Stoneware Care"]
+        },
+        "6": {
+          title: "Why Handmade Ceramics Make Meaningful Gifts",
+          category: "Slow Living",
+          meta: "August 26, 2026 · 5 min read",
+          images: [
+            "https://images.unsplash.com/photo-1576020799627-aeac74d58066?auto=format&fit=crop&w=900&q=85",
+            "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85"
+          ],
+          quote: "“A gift made by hand carries an intimacy and presence that mass production can never replicate.”",
+          paragraphs: [
+            "Giving a handmade coffee pour-over, bud vase, or pasta platter signals mindfulness. It is a gift designed to accompany slow morning rituals and shared meals.",
+            "Because no two glaze reactions are identical in the reduction kiln, the recipient receives an original work of functional art crafted uniquely for them."
+          ],
+          tags: ["Gift Ideas", "Mindful Living", "Heirloom Quality", "Slow Living"]
+        }
+      };
+
+      const backdrop = document.getElementById('blogModalBackdrop');
+      const modalBody = document.getElementById('blogModalBody');
+      const closeBtn = document.getElementById('blogModalClose');
+
+      // Open Modal Function
+      function openBlogModal(blogId) {
+        const article = blogArticles[blogId];
+        if (!article) return;
+
+        // Render Article Details
+        modalBody.innerHTML = `
+          <div class="blog-modal-meta-row">
+            <span class="blog-modal-category">${article.category}</span>
+            <span>${article.meta}</span>
+          </div>
+          
+          <h2 class="blog-modal-title">${article.title}</h2>
+          
+          <div class="blog-modal-gallery">
+            <img class="blog-modal-img" src="${article.images[0]}" alt="${article.title}" loading="lazy">
+            <img class="blog-modal-img" src="${article.images[1]}" alt="${article.title} Studio Detail" loading="lazy">
+          </div>
+
+          <p class="blog-modal-text">${article.paragraphs[0]}</p>
+          
+          <blockquote class="blog-modal-quote">${article.quote}</blockquote>
+          
+          <p class="blog-modal-text">${article.paragraphs[1]}</p>
+
+          <div class="blog-modal-tags">
+            ${article.tags.map(tag => `<span class="blog-tag">#${tag}</span>`).join('')}
+          </div>
+        `;
+
+        backdrop.classList.add('active');
+        backdrop.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      }
+
+      // Close Modal Function
+      function closeBlogModal() {
+        backdrop.classList.remove('active');
+        backdrop.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      // Read more button click handler
+      document.querySelectorAll('.pottery-blog-readmore').forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          const blogId = button.getAttribute('data-blog-id');
+          openBlogModal(blogId);
+        });
+      });
+
+      // Close handlers
+      closeBtn.addEventListener('click', closeBlogModal);
+      backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) closeBlogModal();
+      });
+
+      // Close on ESC key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && backdrop.classList.contains('active')) {
+          closeBlogModal();
+        }
+      });
+    })();
+  </script>
+</section>
+
+<section class="pottery-newsletter-section" id="newsletter">
+  <style>
+    .pottery-newsletter-section {
+      --blog-bg: #f5f1e9;
+      --blog-card: #fffdf9;
+      --blog-text: #263c39;
+      --blog-muted: #737b73;
+      --blog-accent: #b86f50;
+      background: var(--blog-bg);
+      color: var(--blog-text);
+      padding: 0 6% 90px;
+      font-family: "DM Sans", sans-serif;
+    }
+    .pottery-newsletter-section * {
+      box-sizing: border-box;
+    }
+    .newsletter-box {
+      max-width: 1250px;
+      margin: 0 auto;
+      background: var(--blog-card);
+      border-radius: 20px;
+      border: 1px solid rgba(38, 60, 57, 0.09);
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(38, 60, 57, 0.06);
+    }
+    .newsletter-content {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .newsletter-badge {
+      display: inline-block;
+      background: rgba(184, 111, 80, 0.14);
+      color: var(--blog-accent);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
+    .newsletter-content h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.25;
+      margin: 0 0 14px;
+    }
+    .newsletter-content p {
+      color: var(--blog-muted);
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 0 0 30px;
+    }
+    /* Newsletter Form */
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .newsletter-input {
+      flex: 1;
+      padding: 14px 18px;
+      border: 1.5px solid rgba(38, 60, 57, 0.15);
+      border-radius: 6px;
+      background: rgba(128, 128, 128, 0.05);
+      color: inherit;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .newsletter-input:focus {
+      border-color: var(--blog-accent);
+    }
+    .newsletter-submit {
+      padding: 14px 28px;
+      background: var(--blog-accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: opacity 0.2s ease;
+      white-space: nowrap;
+    }
+    .newsletter-submit:hover {
+      opacity: 0.9;
+    }
+    .newsletter-note {
+      font-size: 12px;
+      color: var(--blog-muted);
+      margin-top: 14px;
+    }
+    .newsletter-success {
+      display: none;
+      background: rgba(46, 125, 50, 0.12);
+      color: #2e7d32;
+      padding: 12px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 15px;
+    }
+    /* Dark mode */
+    html[data-theme="dark"] .pottery-newsletter-section {
+      --blog-bg: #172522;
+      --blog-card: #22332f;
+      --blog-text: #f2ece2;
+      --blog-muted: #bdc8c0;
+      --blog-accent: #d99a79;
+    }
+    html[data-theme="dark"] .newsletter-box {
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    html[data-theme="dark"] .newsletter-input {
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+    html[data-theme="dark"] .newsletter-success {
+      color: #81c784;
+    }
+    @media (max-width: 576px) {
+      .newsletter-box {
+        padding: 40px 20px;
+      }
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <div class="newsletter-box">
+    <div class="newsletter-content">
+      <span class="newsletter-badge">The Studio Gazette</span>
+      <h2>Receive Monthly Studio Letters</h2>
+      <p>
+        Early invitations to limited kiln unveilings, private gallery sales, and long-form 
+        essays on mindful craft. Delivered once a month on the full moon.
+      </p>
+      <form id="studioNewsletterForm" class="newsletter-form" onsubmit="event.preventDefault(); document.getElementById('newsletterSuccess').style.display='block'; this.reset();">
+        <input type="email" class="newsletter-input" placeholder="Your email address..." required autocomplete="email">
+        <button type="submit" class="newsletter-submit">Subscribe</button>
+      </form>
+      
+      <div id="newsletterSuccess" class="newsletter-success">
+        ✓ Thank you for subscribing! Your complimentary Clay Care Field Guide is on its way.
+      </div>
+      <div class="newsletter-note">
+        No spam, ever. Unsubscribe at any time with one click.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORE TOPICS -->
+<section class="blog-topics">
+  <style>
+    .blog-topics {
+      padding: 75px 6%;
+      background: #e9eee5;
+      color: #293d36;
+      text-align: center;
+    }
+
+    .blog-topics-inner {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .blog-topics h2 {
+      font: 42px "Playfair Display", Georgia, serif;
+      margin: 12px 0;
+    }
+
+    .blog-topics-intro {
+      color: #66736a;
+      line-height: 1.8;
+      margin-bottom: 35px;
+    }
+
+    .blog-topic-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .blog-topic {
+      padding: 30px 18px;
+      background: #fffdf8;
+      border: 1px solid #d8dfd3;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #293d36;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .blog-topic:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px #293d3618;
+    }
+
+    .blog-topic .topic-icon {
+      font-size: 32px;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .blog-topic h3 {
+      font: 21px "Playfair Display", Georgia, serif;
+      margin: 0 0 10px;
+    }
+
+    .blog-topic p {
+      color: #70786f;
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media(max-width: 768px) {
+      .blog-topic-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-topics h2 { font-size: 34px; }
+    }
+
+    @media(max-width: 430px) {
+      .blog-topic-grid { grid-template-columns: 1fr; }
+    }
+
+    html[data-theme="dark"] .blog-topics {
+      background: #202f29;
+      color: #f4ede3;
+    }
+
+    html[data-theme="dark"] .blog-topic {
+      background: #293b34;
+      border-color: #40544a;
+      color: #f4ede3;
+    }
+
+    html[data-theme="dark"] .blog-topic p,
+    html[data-theme="dark"] .blog-topics-intro {
+      color: #c0c9c1;
+    }
+  </style>
+
+  <div class="blog-topics-inner">
+    <span class="blog-featured-label">Find Your Inspiration</span>
+    <h2>Explore Our Journal</h2>
+    <p class="blog-topics-intro">
+      Follow your curiosity and discover something new about ceramics.
+    </p>
+
+    <div class="blog-topic-grid">
+      <a class="blog-topic" href="#blog">
+        <span class="topic-icon">🏺</span>
+        <h3>Pottery Guides</h3>
+        <p>Learn about clay, glazing, and traditional techniques.</p>
+      </a>
+
+      <a class="blog-topic" href="#blog">
+        <span class="topic-icon">🎨</span>
+        <h3>Artist Stories</h3>
+        <p>Meet the makers and discover their creative journeys.</p>
+      </a>
+
+      <a class="blog-topic" href="#blog">
+        <span class="topic-icon">🏡</span>
+        <h3>Home Styling</h3>
+        <p>Bring handcrafted beauty into your everyday spaces.</p>
+      </a>
+
+      <a class="blog-topic" href="#blog">
+        <span class="topic-icon">✨</span>
+        <h3>Ceramic Care</h3>
+        <p>Keep your favourite handmade pieces looking beautiful.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- NEWSLETTER SIGNUP -->
+<!-- ============================================
+     BLOG NEWSLETTER — LIGHT & DARK MODE
+============================================ -->
+<!-- 
+<section class="blog-newsletter"
+    style="padding:75px 6%;
+           background-color:var(--bs-body-bg, #fffaf5);
+           color:var(--bs-body-color, #293d36);
+           transition:background-color .3s ease, color .3s ease;">
+
+    <style>
+        /* Newsletter container */
+        .blog-newsletter-inner {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* Eyebrow text */
+        .blog-newsletter .blog-featured-label {
+            display: inline-block;
+            color: #a85f46 !important;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Heading */
+        .blog-newsletter h2 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.25;
+            font-weight: 700;
+            margin: 18px 0;
+            color: var(--bs-heading-color, #293d36) !important;
+        }
+
+        /* Description */
+        .blog-newsletter p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: var(--bs-secondary-color, #6c746d) !important;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        /* Form */
+        .blog-newsletter-form {
+            display: flex;
+            gap: 10px;
+            max-width: 570px;
+            margin: 28px auto 0;
+        }
+
+        /* Email input */
+        .blog-newsletter-form input {
+            flex: 1;
+            min-width: 0;
+            padding: 15px 16px;
+            border: 1px solid var(--bs-border-color, #d7c5b8);
+            border-radius: 6px;
+            background-color: var(--bs-tertiary-bg, #fffdf9) !important;
+            color: var(--bs-body-color, #293d36) !important;
+            font: inherit;
+            outline: none;
+        }
+
+        .blog-newsletter-form input::placeholder {
+            color: var(--bs-secondary-color, #777) !important;
+            opacity: 1;
+        }
+
+        .blog-newsletter-form input:focus {
+            border-color: #a85f46;
+            box-shadow: 0 0 0 3px rgba(168, 95, 70, 0.15);
+        }
+
+        /* Subscribe button */
+        .blog-newsletter-form button {
+            padding: 15px 22px;
+            border: 1px solid #a85f46;
+            border-radius: 6px;
+            background-color: #a85f46 !important;
+            color: #ffffff !important;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background-color .3s ease;
+        }
+
+        .blog-newsletter-form button:hover {
+            background-color: #874833 !important;
+        }
+
+        /* Form message */
+        .blog-newsletter .blog-newsletter-message {
+            margin-top: 15px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--bs-secondary-color, #6c746d) !important;
+        }
+
+        /* Light mode */
+        html[data-theme="light"] .blog-newsletter,
+        html[data-bs-theme="light"] .blog-newsletter {
+            background-color: #fffaf5 !important;
+            color: #293d36 !important;
+        }
+
+        html[data-theme="light"] .blog-newsletter h2,
+        html[data-bs-theme="light"] .blog-newsletter h2 {
+            color: #293d36 !important;
+        }
+
+        html[data-theme="light"] .blog-newsletter p,
+        html[data-bs-theme="light"] .blog-newsletter p {
+            color: #626b64 !important;
+        }
+
+        /* Dark mode */
+        html[data-theme="dark"] .blog-newsletter,
+        html[data-bs-theme="dark"] .blog-newsletter {
+            background-color: #302722 !important;
+            color: #f4ede3 !important;
+        }
+
+        html[data-theme="dark"] .blog-newsletter h2,
+        html[data-bs-theme="dark"] .blog-newsletter h2 {
+            color: #f4ede3 !important;
+        }
+
+        html[data-theme="dark"] .blog-newsletter p,
+        html[data-bs-theme="dark"] .blog-newsletter p {
+            color: #d0c4b9 !important;
+        }
+
+        html[data-theme="dark"] .blog-newsletter .blog-newsletter-message,
+        html[data-bs-theme="dark"] .blog-newsletter .blog-newsletter-message {
+            color: #d0c4b9 !important;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 520px) {
+            .blog-newsletter {
+                padding: 50px 5% !important;
+            }
+
+            .blog-newsletter-form {
+                flex-direction: column;
+            }
+
+            .blog-newsletter-form input,
+            .blog-newsletter-form button {
+                width: 100%;
+                min-height: 48px;
+            }
+        }
+    </style>
+
+    <div class="blog-newsletter-inner">
+
+        <span class="blog-featured-label">
+            A Little Inspiration in Your Inbox
+        </span>
+
+       <h2 style="
+    color: #293d36;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 15px 0;
+    opacity: 1;
+    text-align: center;
+">
+    Stay Inspired by Handmade Living
+</h2>
+
+<p style="
+    color: #454d47;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 650px;
+    opacity: 1;
+    text-align: center;
+">
+    Get new pottery stories, artist features, styling ideas, and
+    studio inspiration delivered to your inbox.
+</p>
+
+        <form class="blog-newsletter-form" id="blogNewsletterForm">
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email address"
+                aria-label="Email address"
+                autocomplete="email"
+                required>
+
+            <button type="submit">
+                Subscribe →
+            </button>
+
+        </form>
+
+        <div
+            class="blog-newsletter-message"
+            id="blogNewsletterMessage"
+            role="status"
+            aria-live="polite">
+        </div>
+
+    </div>
+
+    <script>
+        const newsletterForm =
+            document.getElementById("blogNewsletterForm");
+
+        if (newsletterForm) {
+            newsletterForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                document.getElementById(
+                    "blogNewsletterMessage"
+                ).textContent =
+                    "Thank you for your interest! Connect this form to a mailing service to receive subscriptions.";
+
+                this.reset();
+            });
+        }
+    </script>
+
+</section> -->
+<!-- ================= END BLOG SECTION ================= -->
+
+
+
+<!-- FOOTER -->
+ <footer class="site-footer">
+    <div class="container-custom">
+        <div class="footer-grid">
+
+            <!-- Column 1: Brand & Socials -->
+            <div class="footer-column">
+    <!-- Brand Logo + Text -->
+    <a href="index.html" class="brand" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+        <img src="assets/images/logo.png" alt="Clay & Co. Logo" style="height: 32px; width: auto; object-fit: contain; display: block;">
+        <span>Clay & Co.</span>
+    </a>
+
+    <p class="mt-3">
+        Thoughtfully handcrafted ceramics
+        made to bring warmth, beauty, and
+        character to everyday living.
+    </p>
+
+    <!-- Social Icons -->
+    <div class="footer-social-links">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+            <i class="fa-brands fa-pinterest-p"></i>
+        </a>
+    </div>
+</div>
+
+            <!-- Column 2: Explore -->
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="index.html">Home 1</a>
+                    </li>
+                    <li>
+                        <a href="home2.html">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">Shop</a>
+                    </li>
+                    <li>
+                        <a href="artist-spotlight.html">Our Artists</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Discover (with Blog added) -->
+            <div class="footer-column">
+                <h3>Discover</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Studio Journal</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">Collections</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Contact -->
+            <div class="footer-column">
+    <h3>Get in Touch</h3>
+    <p>
+        Have a question about our handmade
+        collections?
+    </p>
+
+    <!-- Direct Contact Details (No Button) -->
+    <ul class="footer-contact-info" style="list-style: none; padding: 0; margin: 15px 0 0; display: flex; flex-direction: column; gap: 12px;">
+        <li style="display: flex; align-items: center; gap: 10px;">
+            <i class="fa-regular fa-envelope" style="color: #b86f50; font-size: 14px; width: 16px;"></i>
+            <a href="mailto:hello@clayandco.com" style="color: inherit; text-decoration: none; font-size: 14px; opacity: 0.85;">
+                hello@clayandco.com
+            </a>
+        </li>
+        <li style="display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-phone" style="color: #b86f50; font-size: 14px; width: 16px;"></i>
+            <a href="tel:+12125550198" style="color: inherit; text-decoration: none; font-size: 14px; opacity: 0.85;">
+                +1 (212) 555-0198
+            </a>
+        </li>
+        <li style="display: flex; align-items: flex-start; gap: 10px;">
+            <i class="fa-solid fa-location-dot" style="color: #b86f50; font-size: 14px; width: 16px; margin-top: 3px;"></i>
+            <span style="font-size: 14px; opacity: 0.85; line-height: 1.4;">
+                42 Artisan , Ceramic District, NY
+            </span>
+        </li>
+    </ul>
+</div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; <span data-current-year></span> Clay & Co. All rights reserved.
+            </p>
+            <p>
+                Made with care, shaped by hand.
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Existing Common JS -->
+<script src="common.js"></script>
+
+
+
+</body>
+</html>
