@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Clay & Co. | Handmade Pottery</title>
+
+    <!-- Google Fonts -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <!-- Common CSS -->
+
+    <link rel="stylesheet" href="common.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="site-navbar">
+
+        <div class="container-custom navbar-inner">
+
+            <!-- LOGO -->
+
+            <a href="index.html" class="brand">
+
+                <img
+                    src="assets/images/logo.png"
+                    
+                >
+
+                <span>Clay & Co.</span>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="nav-menu"
+                id="navMenu"
+                aria-label="Main navigation"
+            >
+
+                <!-- HOME DROPDOWN -->
+
+                <div class="nav-dropdown">
+
+                    <a
+                        href="#"
+                        class="nav-link dropdown-toggle-custom"
+                        aria-expanded="false"
+                    >
+
+                        Home
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </a>
+
+                    <div class="dropdown-menu-custom">
+
+                        <a href="index.html">
+                            Home 1
+                        </a>
+
+                        <a href="home2.html">
+                            Home 2
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a href="shop.html" class="nav-link">
+                    Shop
+                </a>
+
+                <a
+                    href="artist-spotlight.html"
+                    class="nav-link"
+                >
+                    Artist Spotlight
+                </a>
+
+                <a href="blog.html" class="nav-link">
+                    Blog
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- ACTION BUTTONS -->
+
+            <div class="nav-actions">
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="themeToggle"
+                    aria-label="Switch to dark mode"
+                    title="Toggle dark mode"
+                >
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="directionToggle"
+                    aria-label="Switch to right-to-left layout"
+                    title="Toggle RTL"
+                >
+
+                    <i
+                        class="fa-solid fa-arrow-right-arrow-left"
+                    ></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="icon-button menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navMenu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+    <!-- CONTACT SECTION START -->
+<!-- CONTACT SECTION START -->
+<section class="pottery-contact" id="contact" style="background-color: transparent; color: inherit; padding: 4rem 1.25rem; font-family: inherit;">
+  
+  <!-- Minimal support for validation highlights and spinner animation -->
+  <style>
+    .form-group.has-error input,
+    .form-group.has-error select,
+    .form-group.has-error textarea {
+      border-color: #e05252 !important;
+      background-color: rgba(224, 82, 82, 0.06) !important;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #c46d4e !important;
+      box-shadow: 0 0 0 3px rgba(196, 109, 78, 0.2);
+    }
+    @keyframes potterySpin {
+      to { transform: rotate(360deg); }
+    }
+    .btn-spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: potterySpin 0.8s linear infinite;
+    }
+    /* Fix for native select dropdown options in dark/light mode */
+    #inquiryType option {
+      background: #2b2826;
+      color: #f7f5f2;
+    }
+    @media (prefers-color-scheme: light) {
+      #inquiryType option { background: #ffffff; color: #222222; }
+    }
+  </style>
+
+  <div class="contact-container" style="max-width: 1200px; margin: 0 auto;">
+    
+    <!-- Header -->
+    <header class="contact-header" style="text-align: center; margin-bottom: 3.5rem; max-width: 680px; margin-left: auto; margin-right: auto;">
+      <span class="badge" style="display: inline-block; background-color: rgba(196, 109, 78, 0.15); color: #c46d4e; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.35rem 1.1rem; border-radius: 50px; margin-bottom: 0.9rem;">
+        Visit Our Studio
+      </span>
+      <h2 style="font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 600; margin: 0 0 0.8rem; color: inherit;">
+        Get in Touch with the Gallery
+      </h2>
+      <p style="color: inherit; opacity: 0.75; line-height: 1.6; font-size: 1rem; margin: 0;">
+        Whether you're looking for custom dinnerware commissions, workshop bookings, or studio visits, our doors and inbox are always open.
+      </p>
+    </header>
+
+    <!-- Auto-Responsive 2-Column Grid (Stacks on mobile automatically) -->
+    <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 2rem; align-items: start;">
+      
+      <!-- Left Column: Studio Info & Map -->
+      <div class="contact-info-panel" style="display: flex; flex-direction: column; gap: 1.5rem;">
+        
+        <!-- Info Card -->
+        <div class="info-card" style="background-color: rgba(128, 128, 128, 0.07); border: 1px solid rgba(128, 128, 128, 0.18); border-radius: 14px; padding: 2rem;">
+          <h3 style="font-size: 1.35rem; margin: 0 0 1.5rem; color: inherit;">The Studio & Showroom</h3>
+          
+          <ul class="info-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.3rem;">
+            <li style="display: flex; align-items: flex-start; gap: 0.9rem;">
+              <span style="font-size: 1.25rem; line-height: 1.4;">📍</span>
+              <div>
+                <strong style="display: block; font-size: 0.95rem; margin-bottom: 0.2rem; color: inherit;">Location</strong>
+                <p style="margin: 0; color: inherit; opacity: 0.75; font-size: 0.92rem; line-height: 1.45;">42 Artisan Way, Ceramic District, NY 10012</p>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 0.9rem;">
+              <span style="font-size: 1.25rem; line-height: 1.4;">🕒</span>
+              <div>
+                <strong style="display: block; font-size: 0.95rem; margin-bottom: 0.2rem; color: inherit;">Gallery Hours</strong>
+                <p style="margin: 0; color: inherit; opacity: 0.75; font-size: 0.92rem; line-height: 1.45;">Tue – Sat: 10:00 AM – 6:00 PM<br>Sun: 11:00 AM – 4:00 PM (Mon Closed)</p>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 0.9rem;">
+              <span style="font-size: 1.25rem; line-height: 1.4;">✉️</span>
+              <div>
+                <strong style="display: block; font-size: 0.95rem; margin-bottom: 0.2rem; color: inherit;">Direct Email</strong>
+                <p style="margin: 0; font-size: 0.92rem;">
+                  <a href="mailto:hello@earthclaygallery.com" style="color: #c46d4e; text-decoration: none;">hello@earthclaygallery.com</a>
+                </p>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 0.9rem;">
+              <span style="font-size: 1.25rem; line-height: 1.4;">📞</span>
+              <div>
+                <strong style="display: block; font-size: 0.95rem; margin-bottom: 0.2rem; color: inherit;">Telephone</strong>
+                <p style="margin: 0; font-size: 0.92rem;">
+                  <a href="tel:+12125550198" style="color: #c46d4e; text-decoration: none;">+1 (212) 555-0198</a>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Embedded Google Map -->
+        <div class="map-wrapper" style="border-radius: 14px; overflow: hidden; height: 260px; border: 1px solid rgba(128, 128, 128, 0.18);">
+          <iframe 
+            title="Gallery Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.633464876182!2d-74.0016335!3d40.7258384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598e3b320dfd%3A0xe67db0733a41c1eb!2sSoHo%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+            width="100%" 
+            height="100%" 
+            style="border: 0; display: block;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Right Column: Form Panel -->
+      <div class="contact-form-panel" style="background-color: rgba(128, 128, 128, 0.07); border: 1px solid rgba(128, 128, 128, 0.18); border-radius: 14px; padding: 2.2rem;">
+        <form id="potteryContactForm" class="contact-form" novalidate>
+          <h3 style="font-size: 1.5rem; margin: 0 0 0.4rem; color: inherit;">Send Us a Message</h3>
+          <p style="color: inherit; opacity: 0.75; margin: 0 0 1.6rem; font-size: 0.95rem;">
+            Fill in the form below and we will reply within 24–48 hours.
+          </p>
+
+          <!-- Success Alert Banner -->
+          <div class="form-alert success" id="formSuccessAlert" role="alert" aria-live="polite" style="display: none; padding: 0.9rem 1.2rem; border-radius: 8px; margin-bottom: 1.3rem; font-size: 0.92rem; background-color: rgba(46, 125, 50, 0.15); border: 1px solid rgba(46, 125, 50, 0.3); color: #4caf50;">
+            Thank you! Your message has been received. We will get back to you soon.
+          </div>
+
+          <!-- Full Name -->
+          <div class="form-group" id="group-fullName" style="margin-bottom: 1.1rem; display: flex; flex-direction: column;">
+            <label for="fullName" style="font-size: 0.88rem; font-weight: 600; margin-bottom: 0.4rem; color: inherit;">
+              Full Name <span style="color: #c46d4e;">*</span>
+            </label>
+            <input type="text" id="fullName" name="fullName" placeholder="e.g. Eleanor Vance" autocomplete="name" style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid rgba(128, 128, 128, 0.25); border-radius: 8px; background-color: rgba(128, 128, 128, 0.08); color: inherit; font-family: inherit; font-size: 0.95rem; box-sizing: border-box; transition: border-color 0.2s;">
+            <span class="error-msg" id="error-fullName" style="color: #e05252; font-size: 0.8rem; margin-top: 0.3rem; min-height: 1.1rem;"></span>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group" id="group-email" style="margin-bottom: 1.1rem; display: flex; flex-direction: column;">
+            <label for="email" style="font-size: 0.88rem; font-weight: 600; margin-bottom: 0.4rem; color: inherit;">
+              Email Address <span style="color: #c46d4e;">*</span>
+            </label>
+            <input type="email" id="email" name="email" placeholder="name@domain.com" autocomplete="email" style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid rgba(128, 128, 128, 0.25); border-radius: 8px; background-color: rgba(128, 128, 128, 0.08); color: inherit; font-family: inherit; font-size: 0.95rem; box-sizing: border-box; transition: border-color 0.2s;">
+            <span class="error-msg" id="error-email" style="color: #e05252; font-size: 0.8rem; margin-top: 0.3rem; min-height: 1.1rem;"></span>
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group" id="group-phone" style="margin-bottom: 1.1rem; display: flex; flex-direction: column;">
+            <label for="phone" style="font-size: 0.88rem; font-weight: 600; margin-bottom: 0.4rem; color: inherit;">
+              Phone Number (Optional)
+            </label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid rgba(128, 128, 128, 0.25); border-radius: 8px; background-color: rgba(128, 128, 128, 0.08); color: inherit; font-family: inherit; font-size: 0.95rem; box-sizing: border-box; transition: border-color 0.2s;">
+            <span class="error-msg" id="error-phone" style="color: #e05252; font-size: 0.8rem; margin-top: 0.3rem; min-height: 1.1rem;"></span>
+          </div>
+
+          <!-- Inquiry Type -->
+          <div class="form-group" id="group-inquiryType" style="margin-bottom: 1.1rem; display: flex; flex-direction: column;">
+            <label for="inquiryType" style="font-size: 0.88rem; font-weight: 600; margin-bottom: 0.4rem; color: inherit;">
+              Reason for Contact <span style="color: #c46d4e;">*</span>
+            </label>
+            <select id="inquiryType" name="inquiryType" style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid rgba(128, 128, 128, 0.25); border-radius: 8px; background-color: rgba(128, 128, 128, 0.08); color: inherit; font-family: inherit; font-size: 0.95rem; box-sizing: border-box; transition: border-color 0.2s;">
+              <option value="">-- Please select an option --</option>
+              <option value="custom">Custom Order / Bespoke Commission</option>
+              <option value="workshop">Wheel Throwing & Glaze Workshops</option>
+              <option value="retail">Gallery Purchase & Shipping</option>
+              <option value="wholesale">Wholesale & Commercial Projects</option>
+              <option value="general">General Studio Inquiry</option>
+            </select>
+            <span class="error-msg" id="error-inquiryType" style="color: #e05252; font-size: 0.8rem; margin-top: 0.3rem; min-height: 1.1rem;"></span>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group" id="group-message" style="margin-bottom: 1.3rem; display: flex; flex-direction: column;">
+            <label for="message" style="font-size: 0.88rem; font-weight: 600; margin-bottom: 0.4rem; color: inherit;">
+              Your Message <span style="color: #c46d4e;">*</span>
+            </label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about what you're looking for, dimensions, clay preferences, or dates..." style="width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid rgba(128, 128, 128, 0.25); border-radius: 8px; background-color: rgba(128, 128, 128, 0.08); color: inherit; font-family: inherit; font-size: 0.95rem; box-sizing: border-box; resize: vertical; transition: border-color 0.2s;"></textarea>
+            <span class="error-msg" id="error-message" style="color: #e05252; font-size: 0.8rem; margin-top: 0.3rem; min-height: 1.1rem;"></span>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="submitBtn" class="btn-submit" style="width: 100%; padding: 0.85rem 1.6rem; background-color: #c46d4e; color: #ffffff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; transition: opacity 0.2s;">
+            <span class="btn-text">Send Inquiry</span>
+            <span class="btn-spinner" style="display: none;" aria-hidden="true"></span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- CONTACT SECTION END -->
+<!-- CONTACT SECTION END -->
+
+    <!-- ================= FOOTER ================= -->
+
+    
+
+  <footer class="site-footer">
+    <div class="container-custom">
+        <div class="footer-grid">
+
+            <!-- Column 1: Brand & Socials -->
+            <div class="footer-column">
+    <!-- Brand Logo + Text -->
+    <a href="index.html" class="brand" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+        <img src="assets/images/logo.png" alt="Clay & Co. Logo" style="height: 32px; width: auto; object-fit: contain; display: block;">
+        <span>Clay & Co.</span>
+    </a>
+
+    <p class="mt-3">
+        Thoughtfully handcrafted ceramics
+        made to bring warmth, beauty, and
+        character to everyday living.
+    </p>
+
+    <!-- Social Icons -->
+    <div class="footer-social-links">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+            <i class="fa-brands fa-pinterest-p"></i>
+        </a>
+    </div>
+</div>
+
+            <!-- Column 2: Explore -->
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="index.html">Home 1</a>
+                    </li>
+                    <li>
+                        <a href="home2.html">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">Shop</a>
+                    </li>
+                    <li>
+                        <a href="artist-spotlight.html">Our Artists</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Discover (with Blog added) -->
+            <div class="footer-column">
+                <h3>Discover</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Studio Journal</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">Collections</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Contact -->
+            <div class="footer-column">
+    <h3>Get in Touch</h3>
+    <p>
+        Have a question about our handmade
+        collections?
+    </p>
+
+    <!-- Direct Contact Details (No Button) -->
+    <ul class="footer-contact-info" style="list-style: none; padding: 0; margin: 15px 0 0; display: flex; flex-direction: column; gap: 12px;">
+        <li style="display: flex; align-items: center; gap: 10px;">
+            <i class="fa-regular fa-envelope" style="color: #b86f50; font-size: 14px; width: 16px;"></i>
+            <a href="mailto:hello@clayandco.com" style="color: inherit; text-decoration: none; font-size: 14px; opacity: 0.85;">
+                hello@clayandco.com
+            </a>
+        </li>
+        <li style="display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-phone" style="color: #b86f50; font-size: 14px; width: 16px;"></i>
+            <a href="tel:+12125550198" style="color: inherit; text-decoration: none; font-size: 14px; opacity: 0.85;">
+                +1 (212) 555-0198
+            </a>
+        </li>
+        <li style="display: flex; align-items: flex-start; gap: 10px;">
+            <i class="fa-solid fa-location-dot" style="color: #b86f50; font-size: 14px; width: 16px; margin-top: 3px;"></i>
+            <span style="font-size: 14px; opacity: 0.85; line-height: 1.4;">
+                42 Artisan , Ceramic District, NY
+            </span>
+        </li>
+    </ul>
+</div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; <span data-current-year></span> Clay & Co. All rights reserved.
+            </p>
+            <p>
+                Made with care, shaped by hand.
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- COMMON JAVASCRIPT -->
+
+    <script src="common.js"></script>
+
+</body>
+
+</html>
