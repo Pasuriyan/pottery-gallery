@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Clay & Co. | Handmade Pottery</title>
+
+    <!-- Google Fonts -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <!-- Common CSS -->
+
+    <link rel="stylesheet" href="common.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="site-navbar">
+
+        <div class="container-custom navbar-inner">
+
+            <!-- LOGO -->
+
+            <a href="index.html" class="brand">
+
+                <img
+                    src="assets/images/logo.png"
+                    
+                >
+
+                <span>Clay & Co.</span>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="nav-menu"
+                id="navMenu"
+                aria-label="Main navigation"
+            >
+
+                <!-- HOME DROPDOWN -->
+
+                <div class="nav-dropdown">
+
+                    <a
+                        href="#"
+                        class="nav-link dropdown-toggle-custom"
+                        aria-expanded="false"
+                    >
+
+                        Home
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </a>
+
+                    <div class="dropdown-menu-custom">
+
+                        <a href="index.html">
+                            Home 1
+                        </a>
+
+                        <a href="home2.html">
+                            Home 2
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a href="shop.html" class="nav-link">
+                    Shop
+                </a>
+
+                <a
+                    href="artist-spotlight.html"
+                    class="nav-link"
+                >
+                    Artist Spotlight
+                </a>
+
+                <a href="blog.html" class="nav-link">
+                    Blog
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- ACTION BUTTONS -->
+
+            <div class="nav-actions">
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="themeToggle"
+                    aria-label="Switch to dark mode"
+                    title="Toggle dark mode"
+                >
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="directionToggle"
+                    aria-label="Switch to right-to-left layout"
+                    title="Toggle RTL"
+                >
+
+                    <i
+                        class="fa-solid fa-arrow-right-arrow-left"
+                    ></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="icon-button menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navMenu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+<section class="section">
+
+    <div class="container-custom hero-grid">
+
+        <div class="hero-image">
+
+            <img
+                src="assets/images/artist-1.jpg"
+                alt="Ceramic artist working in a studio"
+            >
+
+        </div>
+
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                Artist Spotlight
+            </span>
+
+            <h1>
+                Meet Meera
+                <span>Krishnan.</span>
+            </h1>
+
+            <p>
+                Inspired by the textures of nature
+                and the quiet beauty of everyday
+                objects, Meera creates ceramics that
+                combine expressive forms with
+                practical functionality.
+            </p>
+
+            <p>
+                Her work celebrates natural surfaces,
+                subtle variations, and the individuality
+                that makes handmade ceramics special.
+            </p>
+
+            <a
+                href="shop.html"
+                class="btn-custom"
+            >
+
+                Explore Her Collection
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================================
+     SECTION 1: FEATURED ARTISTS
+===================================================== -->
+
+<section class="section">
+    <div class="container-custom">
+
+    <div class="section-heading text-center" data-animate>
+        <span class="eyebrow">Our Creative Community</span>
+        <h2>Meet Our Featured Artists</h2>
+        <p>Discover the people and passion behind every handmade creation.</p>
+    </div>
+
+    <div class="grid-3">
+
+        <div class="content-card artist-card" data-animate>
+            <img src="assets/images/artist-1.jpg"
+                 alt="Ceramic artist creating handmade pottery"
+                 class="artist-image">
+
+            <div class="card-body">
+                <span class="eyebrow">Functional Ceramics</span>
+                <h3>Meera Krishnan</h3>
+                <p>Meera creates everyday pottery inspired by nature, earthy colors, and traditional techniques.</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> Chennai, India</span>
+                    <span>8 Years Experience</span>
+                </div>
+                <a href="contact.html" class="btn-custom">Connect With Artist</a>
+            </div>
+        </div>
+
+        <div class="content-card artist-card" data-animate>
+            <img src="assets/images/artist-2.jpg"
+                 alt="Artist shaping a ceramic vase"
+                 class="artist-image">
+
+            <div class="card-body">
+                <span class="eyebrow">Sculptural Pottery</span>
+                <h3>Arjun Raman</h3>
+                <p>Arjun transforms raw clay into expressive sculptural pieces with unique textures and forms.</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> Pondicherry, India</span>
+                    <span>6 Years Experience</span>
+                </div>
+                <a href="contact.html" class="btn-custom">Connect With Artist</a>
+            </div>
+        </div>
+
+        <div class="content-card artist-card" data-animate>
+            <img src="assets/images/pottery-4.jpg"
+                 alt="Handcrafted decorative ceramic artwork"
+                 class="artist-image">
+
+            <div class="card-body">
+                <span class="eyebrow">Decorative Ceramics</span>
+                <h3>Ananya Devi</h3>
+                <p>Ananya combines contemporary design with handcrafted details to create distinctive decorative art.</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> Bengaluru, India</span>
+                    <span>5 Years Experience</span>
+                </div>
+                <a href="contact.html" class="btn-custom">Connect With Artist</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</section>
+
+<!-- =====================================================
+     SECTION 2: THE ARTIST'S JOURNEY
+===================================================== -->
+
+<section class="section section-soft">
+    <div class="container-custom">
+
+
+    <div class="section-heading text-center" data-animate>
+        <span class="eyebrow">From Clay to Creation</span>
+        <h2>The Artist's Journey</h2>
+        <p>Every handmade piece carries a story of patience, skill, and imagination.</p>
+    </div>
+
+    <div class="grid-4">
+
+        <div class="content-card card-body text-center" data-animate>
+            <i class="fa-solid fa-mountain-sun fa-2x mb-3"></i>
+            <h3>01. Inspiration</h3>
+            <p>Artists find inspiration in nature, architecture, culture, and everyday life.</p>
+        </div>
+
+        <div class="content-card card-body text-center" data-animate>
+            <i class="fa-solid fa-hands fa-2x mb-3"></i>
+            <h3>02. Shaping</h3>
+            <p>Raw clay is carefully shaped by hand or on the pottery wheel.</p>
+        </div>
+
+        <div class="content-card card-body text-center" data-animate>
+            <i class="fa-solid fa-palette fa-2x mb-3"></i>
+            <h3>03. Finishing</h3>
+            <p>Textures, glazes, and details give every creation its individual character.</p>
+        </div>
+
+        <div class="content-card card-body text-center" data-animate>
+            <i class="fa-solid fa-fire-burner fa-2x mb-3"></i>
+            <h3>04. Firing</h3>
+            <p>Careful kiln firing turns shaped clay into a finished ceramic piece.</p>
+        </div>
+
+    </div>
+</div>
+
+</section>
+
+<!-- =====================================================
+     SECTION 3: ARTIST STORIES
+===================================================== -->
+
+<section class="section">
+    <div class="container-custom">
+
+
+    <div class="section-heading text-center" data-animate>
+        <span class="eyebrow">Behind the Craft</span>
+        <h2>Stories from the Studio</h2>
+        <p>Get to know the ideas, experiences, and inspirations behind our artists' work.</p>
+    </div>
+
+    <div class="grid-3">
+
+        <article class="content-card" data-animate>
+            <img src="assets/images/pottery-1.jpg"
+                 alt="Handmade pottery inspired by nature"
+                 class="card-image">
+
+            <div class="card-body">
+                <span class="eyebrow">Creative Inspiration</span>
+                <h3>Finding Beauty in Imperfection</h3>
+                <p>Discover why natural textures and imperfect shapes make handmade pottery special.</p>
+                <a href="blog.html" class="btn-custom">Read Artist Stories</a>
+            </div>
+        </article>
+
+        <article class="content-card" data-animate>
+            <img src="assets/images/pottery-2.jpg"
+                 alt="Ceramic vase made by hand"
+                 class="card-image">
+
+            <div class="card-body">
+                <span class="eyebrow">Studio Life</span>
+                <h3>A Day in the Pottery Studio</h3>
+                <p>Explore the daily routines, tools, and creative decisions behind every ceramic piece.</p>
+                <a href="blog.html" class="btn-custom">Read Artist Stories</a>
+            </div>
+        </article>
+
+        <article class="content-card" data-animate>
+            <img src="assets/images/pottery-3.jpg"
+                 alt="Collection of handmade ceramic tableware"
+                 class="card-image">
+
+            <div class="card-body">
+                <span class="eyebrow">Traditional Craft</span>
+                <h3>Keeping Handmade Traditions Alive</h3>
+                <p>Learn how pottery artists preserve traditional skills while exploring modern designs.</p>
+                <a href="blog.html" class="btn-custom">Read Artist Stories</a>
+            </div>
+        </article>
+
+    </div>
+</div>
+
+
+</section>
+
+<!-- =====================================================
+     SECTION 4: UPCOMING WORKSHOPS
+===================================================== -->
+
+<section class="section section-soft">
+    <div class="container-custom">
+
+
+    <div class="section-heading text-center" data-animate>
+        <span class="eyebrow">Learn from the Makers</span>
+        <h2>Upcoming Pottery Workshops</h2>
+        <p>Get hands-on experience and discover the joy of working with clay.</p>
+    </div>
+
+    <div class="grid-3">
+
+        <div class="content-card card-body" data-animate>
+            <i class="fa-solid fa-mug-hot fa-2x mb-3"></i>
+            <span class="eyebrow">Beginner Friendly</span>
+            <h3>Introduction to Pottery</h3>
+            <p>Learn the basics of clay preparation, hand-building, and simple pottery forms.</p>
+            <p><strong>Duration:</strong> 2 Hours</p>
+            <a href="contact.html" class="btn-custom">Enquire Now</a>
+        </div>
+
+        <div class="content-card card-body" data-animate>
+            <i class="fa-solid fa-compact-disc fa-2x mb-3"></i>
+            <span class="eyebrow">Hands-On Session</span>
+            <h3>Pottery Wheel Experience</h3>
+            <p>Try the pottery wheel and create your own unique cup, bowl, or small vase.</p>
+            <p><strong>Duration:</strong> 3 Hours</p>
+            <a href="contact.html" class="btn-custom">Enquire Now</a>
+        </div>
+
+        <div class="content-card card-body" data-animate>
+            <i class="fa-solid fa-paintbrush fa-2x mb-3"></i>
+            <span class="eyebrow">Creative Workshop</span>
+            <h3>Ceramic Painting</h3>
+            <p>Explore colors, patterns, and surface decoration techniques for ceramic pieces.</p>
+            <p><strong>Duration:</strong> 2 Hours</p>
+            <a href="contact.html" class="btn-custom">Enquire Now</a>
+        </div>
+
+    </div>
+</div>
+
+</section>
+
+<!-- =====================================================
+     SECTION 5: ARTIST COLLECTION
+===================================================== -->
+
+<section class="section">
+    <div class="container-custom">
+
+    <div class="section-heading text-center" data-animate>
+        <span class="eyebrow">Made by Hand</span>
+        <h2>Explore Artist Creations</h2>
+        <p>Each piece reflects the maker's individual style and creative vision.</p>
+    </div>
+
+    <div class="grid-4">
+
+        <div class="content-card product-card" data-animate>
+            <img src="assets/images/pottery-1.jpg"
+                 alt="Handcrafted earthy ceramic mug"
+                 class="card-image">
+
+            <div class="card-body">
+                <h3>Earth & Clay Mug</h3>
+                <p>Minimal design with natural earthy textures.</p>
+                <div class="card-meta">
+                    <span>By Meera Krishnan</span>
+                    <span class="product-price">₹850</span>
+                </div>
+                <a href="contact.html" class="btn-custom">Enquire About Piece</a>
+            </div>
+        </div>
+
+        <div class="content-card product-card" data-animate>
+            <img src="assets/images/pottery-2.jpg"
+                 alt="Handmade ceramic flower vase"
+                 class="card-image">
+
+            <div class="card-body">
+                <h3>Terra Sculpted Vase</h3>
+                <p>A sculptural vase with a timeless handmade finish.</p>
+                <div class="card-meta">
+                    <span>By Arjun Raman</span>
+                    <span class="product-price">₹1,650</span>
+                </div>
+                <a href="contact.html" class="btn-custom">Enquire About Piece</a>
+            </div>
+        </div>
+
+        <div class="content-card product-card" data-animate>
+            <img src="assets/images/pottery-3.jpg"
+                 alt="Handcrafted ceramic serving bowl"
+                 class="card-image">
+
+            <div class="card-body">
+                <h3>Gathering Bowl</h3>
+                <p>Functional tableware designed for everyday moments.</p>
+                <div class="card-meta">
+                    <span>By Meera Krishnan</span>
+                    <span class="product-price">₹1,200</span>
+                </div>
+                <a href="contact.html" class="btn-custom">Enquire About Piece</a>
+            </div>
+        </div>
+
+        <div class="content-card product-card" data-animate>
+            <img src="assets/images/pottery-4.jpg"
+                 alt="Contemporary ceramic art piece"
+                 class="card-image">
+
+            <div class="card-body">
+                <h3>Living Form</h3>
+                <p>A contemporary ceramic accent for your living space.</p>
+                <div class="card-meta">
+                    <span>By Ananya Devi</span>
+                    <span class="product-price">₹1,450</span>
+                </div>
+                <a href="contact.html" class="btn-custom">Enquire About Piece</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</section>
+
+<!-- =====================================================
+     SECTION 6: WORK WITH OUR ARTISTS
+===================================================== -->
+
+<section class="section">
+    <div class="container-custom">
+
+
+    <div class="cta-banner text-center" data-animate>
+        <div class="cta-banner-content">
+            <span class="eyebrow">Let's Create Something Meaningful</span>
+
+            <h2>Have a Special Piece in Mind?</h2>
+
+            <p>
+                Looking for a custom ceramic piece, a thoughtful gift,
+                or a pottery workshop? Connect with our artists to discuss your ideas.
+            </p>
+
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="contact.html" class="btn-custom">
+                    Contact Our Artists
+                </a>
+
+                <a href="shop.html" class="btn-custom">
+                    Explore Our Shop
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</section>
+
+    <!-- ================= FOOTER ================= -->
+
+     <footer class="site-footer">
+    <div class="container-custom">
+        <div class="footer-grid">
+
+            <!-- Column 1: Brand & Socials -->
+            <div class="footer-column">
+    <!-- Brand Logo + Text -->
+    <a href="index.html" class="brand" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+        <img src="assets/images/logo.png" alt="Clay & Co. Logo" style="height: 32px; width: auto; object-fit: contain; display: block;">
+        <span>Clay & Co.</span>
+    </a>
+
+    <p class="mt-3">
+        Thoughtfully handcrafted ceramics
+        made to bring warmth, beauty, and
+        character to everyday living.
+    </p>
+
+    <!-- Social Icons -->
+    <div class="footer-social-links">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+            <i class="fa-brands fa-pinterest-p"></i>
+        </a>
+    </div>
+</div>
+
+            <!-- Column 2: Explore -->
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="index.html">Home 1</a>
+                    </li>
+                    <li>
+                        <a href="home2.html">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">Shop</a>
+                    </li>
+                    <li>
+                        <a href="artist-spotlight.html">Our Artists</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Discover (with Blog added) -->
+            <div class="footer-column">
+                <h3>Discover</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Studio Journal</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">Collections</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Contact -->
+            <div class="footer-column">
+    <h3>Get in Touch</h3>
+    <p>
+        Have a question about our handmade
+        collections?
+    </p>
+
+    <!-- Direct Contact Details (No Button) -->
+    <ul class="footer-contact-info" style="list-style: none; padding: 0; margin: 15px 0 0; display: flex; flex-direction: column; gap: 12px;">
+        <li style="display: flex; align-items: center; gap: 10px;">
+            <i class="fa-regular fa-envelope" style="color: #b86f50; font-size: 14px; width: 16px;"></i>
+            <a href="mailto:hello@clayandco.com" style="color: inherit; text-decoration: none; font-size: 14px; opacity: 0.85;">
+                hello@clayandco.com
+            </a>
+        </li>
+        <li style="display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-phone" style="color: #b86f50; font-size: 14px; width: 16px;"></i>
+            <a href="tel:+12125550198" style="color: inherit; text-decoration: none; font-size: 14px; opacity: 0.85;">
+                +1 (212) 555-0198
+            </a>
+        </li>
+        <li style="display: flex; align-items: flex-start; gap: 10px;">
+            <i class="fa-solid fa-location-dot" style="color: #b86f50; font-size: 14px; width: 16px; margin-top: 3px;"></i>
+            <span style="font-size: 14px; opacity: 0.85; line-height: 1.4;">
+                42 Artisan , Ceramic District, NY
+            </span>
+        </li>
+    </ul>
+</div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; <span data-current-year></span> Clay & Co. All rights reserved.
+            </p>
+            <p>
+                Made with care, shaped by hand.
+            </p>
+        </div>
+    </div>
+</footer>
+
+    <!-- COMMON JAVASCRIPT -->
+
+    <script src="common.js"></script>
+
+</body>
+
+</html>
