@@ -220,11 +220,11 @@
       </p>
     </header>
 
-    <!-- Auto-Responsive 2-Column Grid (Stacks on mobile automatically) -->
-    <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 2rem; align-items: start;">
+    <!-- Grid: Set to align-items: stretch so both columns are equal in height -->
+    <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 2rem; align-items: stretch;">
       
-      <!-- Left Column: Studio Info & Map -->
-      <div class="contact-info-panel" style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <!-- Left Column: Flex height 100% -->
+      <div class="contact-info-panel" style="display: flex; flex-direction: column; gap: 1.5rem; height: 100%;">
         
         <!-- Info Card -->
         <div class="info-card" style="background-color: rgba(128, 128, 128, 0.07); border: 1px solid rgba(128, 128, 128, 0.18); border-radius: 14px; padding: 2rem;">
@@ -266,14 +266,14 @@
           </ul>
         </div>
 
-        <!-- Embedded Google Map -->
-        <div class="map-wrapper" style="border-radius: 14px; overflow: hidden; height: 260px; border: 1px solid rgba(128, 128, 128, 0.18);">
+        <!-- Embedded Google Map (flex: 1 fills the remaining height completely) -->
+        <div class="map-wrapper" style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(128, 128, 128, 0.18); flex: 1; min-height: 280px; display: flex; flex-direction: column;">
           <iframe 
             title="Gallery Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.633464876182!2d-74.0016335!3d40.7258384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598e3b320dfd%3A0xe67db0733a41c1eb!2sSoHo%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
             width="100%" 
             height="100%" 
-            style="border: 0; display: block;" 
+            style="border: 0; display: block; flex: 1; width: 100%; min-height: 100%;" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
@@ -282,8 +282,8 @@
       </div>
 
       <!-- Right Column: Form Panel -->
-      <div class="contact-form-panel" style="background-color: rgba(128, 128, 128, 0.07); border: 1px solid rgba(128, 128, 128, 0.18); border-radius: 14px; padding: 2.2rem;">
-        <form id="potteryContactForm" class="contact-form" novalidate>
+      <div class="contact-form-panel" style="background-color: rgba(128, 128, 128, 0.07); border: 1px solid rgba(128, 128, 128, 0.18); border-radius: 14px; padding: 2.2rem; display: flex; flex-direction: column;">
+        <form id="potteryContactForm" class="contact-form" novalidate style="display: flex; flex-direction: column; height: 100%;">
           <h3 style="font-size: 1.5rem; margin: 0 0 0.4rem; color: inherit;">Send Us a Message</h3>
           <p style="color: inherit; opacity: 0.75; margin: 0 0 1.6rem; font-size: 0.95rem;">
             Fill in the form below and we will reply within 24–48 hours.
@@ -347,7 +347,7 @@
           </div>
 
           <!-- Submit Button -->
-          <button type="submit" id="submitBtn" class="btn-submit" style="width: 100%; padding: 0.85rem 1.6rem; background-color: #c46d4e; color: #ffffff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; transition: opacity 0.2s;">
+          <button type="submit" id="submitBtn" class="btn-submit" style="width: 100%; padding: 0.85rem 1.6rem; background-color: #c46d4e; color: #ffffff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; transition: opacity 0.2s; margin-top: auto;">
             <span class="btn-text">Send Inquiry</span>
             <span class="btn-spinner" style="display: none;" aria-hidden="true"></span>
           </button>
@@ -357,9 +357,632 @@
     </div>
   </div>
 </section>
-<!-- CONTACT SECTION END -->
-<!-- CONTACT SECTION END -->
 
+<!-- ==========================================
+     SECTION 2: PLAN YOUR VISIT CARDS
+=========================================== -->
+<section class="plan-visit-section" id="visit-info">
+  <style>
+    .plan-visit-section {
+      --visit-bg: #f5f1e9;
+      --visit-card: #fffdf9;
+      --visit-text: #263c39;
+      --visit-muted: #737b73;
+      --visit-accent: #b86f50;
+      background: var(--visit-bg);
+      color: var(--visit-text);
+      padding: 0 6% 90px;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .plan-visit-section * {
+      box-sizing: border-box;
+    }
+
+    .visit-container {
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    .visit-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 45px;
+    }
+
+    .visit-eyebrow {
+      color: var(--visit-accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .visit-heading h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.25;
+      margin: 0 0 14px;
+    }
+
+    .visit-heading p {
+      color: var(--visit-muted);
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* 3-Column Card Grid */
+    .visit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      margin-bottom: 30px;
+    }
+
+    .visit-card {
+      background: var(--visit-card);
+      border: 1px solid rgba(38, 60, 57, 0.09);
+      border-radius: 14px;
+      padding: 34px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 0 8px 24px rgba(38, 60, 57, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .visit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(38, 60, 57, 0.1);
+    }
+
+    .visit-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: rgba(184, 111, 80, 0.12);
+      color: var(--visit-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .visit-card h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 22px;
+      margin: 0 0 10px;
+      color: var(--visit-text);
+    }
+
+    .visit-card p {
+      color: var(--visit-muted);
+      font-size: 14.5px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Accessibility / Notice Banner */
+    .visit-notice {
+      background: var(--visit-card);
+      border: 1px solid rgba(38, 60, 57, 0.09);
+      border-radius: 12px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 14px;
+      color: var(--visit-muted);
+    }
+
+    .visit-notice i {
+      color: var(--visit-accent);
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    /* Dark Mode */
+    html[data-theme="dark"] .plan-visit-section {
+      --visit-bg: #172522;
+      --visit-card: #22332f;
+      --visit-text: #f2ece2;
+      --visit-muted: #bdc8c0;
+      --visit-accent: #d99a79;
+    }
+
+    html[data-theme="dark"] .visit-card,
+    html[data-theme="dark"] .visit-notice {
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    @media (max-width: 992px) {
+      .visit-grid {
+        grid-template-columns: 1fr;
+      }
+      .visit-notice {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
+
+  <div class="visit-container">
+    <div class="visit-heading">
+      <span class="visit-eyebrow">Visitor Information</span>
+      <h2>Plan Your Studio Visit</h2>
+      <p>We look forward to welcoming you into our showroom and working studio. Here is what to know before arriving.</p>
+    </div>
+
+    <div class="visit-grid">
+      
+      <!-- Card 1: Transit & Parking -->
+      <div class="visit-card">
+        <div class="visit-icon-wrap">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <h3>Transit & Parking</h3>
+        <p>
+          Situated in the Ceramic District on Artisan Way. 2-hour metered street parking is available directly in front. The 8th Street subway station is a convenient 4-minute walk away.
+        </p>
+      </div>
+
+      <!-- Card 2: Tactile & Pet Friendly -->
+      <div class="visit-card">
+        <div class="visit-icon-wrap">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <h3>Tactile & Dog Friendly</h3>
+        <p>
+          Pottery is made to be held. You are encouraged to feel weights and glaze textures in our showroom. Well-mannered, leashed pets are warmly welcomed in both the gallery and garden patio.
+        </p>
+      </div>
+
+      <!-- Card 3: Consultations -->
+      <div class="visit-card">
+        <div class="visit-icon-wrap">
+          <i class="fa-solid fa-calendar-check"></i>
+        </div>
+        <h3>Bespoke Consultations</h3>
+        <p>
+          Need dinnerware sets or interior styling pottery? Book a 30-minute sit-down consultation with our head ceramicist to review clay swatches, bespoke dimensions, and glaze colorways.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Accessibility Banner -->
+    <div class="visit-notice">
+      <i class="fa-solid fa-wheelchair"></i>
+      <span>
+        <strong>Accessibility Notice:</strong> Our gallery showroom, workshop studio, and restrooms are fully step-free and wheelchair accessible. If you require special assistance, please give us a call ahead of time.
+      </span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================
+     SECTION 1: CONTACT FAQ ACCORDION
+=========================================== -->
+<section class="contact-faq-section" id="faq">
+  <style>
+    .contact-faq-section {
+      --faq-bg: #f5f1e9;
+      --faq-card: #fffdf9;
+      --faq-text: #263c39;
+      --faq-muted: #737b73;
+      --faq-accent: #b86f50;
+      background: var(--faq-bg);
+      color: var(--faq-text);
+      padding: 80px 6%;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .contact-faq-section * {
+      box-sizing: border-box;
+    }
+
+    .faq-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .faq-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .faq-eyebrow {
+      color: var(--faq-accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .faq-heading h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.25;
+      margin: 0 0 14px;
+    }
+
+    .faq-heading p {
+      color: var(--faq-muted);
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Accordion Container */
+    .faq-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: var(--faq-card);
+      border: 1px solid rgba(38, 60, 57, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .faq-item.active {
+      border-color: var(--faq-accent);
+      box-shadow: 0 8px 24px rgba(38, 60, 57, 0.06);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 22px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      color: var(--faq-text);
+      font-size: 16.5px;
+      font-weight: 600;
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(184, 111, 80, 0.12);
+      color: var(--faq-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 400;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      background: var(--faq-accent);
+      color: #ffffff;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+      padding: 0 26px;
+      color: var(--faq-muted);
+      font-size: 14.5px;
+      line-height: 1.8;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 26px 22px;
+    }
+
+    /* Dark Mode */
+    html[data-theme="dark"] .contact-faq-section {
+      --faq-bg: #172522;
+      --faq-card: #22332f;
+      --faq-text: #f2ece2;
+      --faq-muted: #bdc8c0;
+      --faq-accent: #d99a79;
+    }
+
+    html[data-theme="dark"] .faq-item {
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    @media (max-width: 576px) {
+      .contact-faq-section {
+        padding: 55px 18px;
+      }
+      .faq-question {
+        padding: 18px 20px;
+        font-size: 15px;
+      }
+      .faq-item.active .faq-answer {
+        padding: 0 20px 18px;
+      }
+    }
+  </style>
+
+  <div class="faq-container">
+    <div class="faq-heading">
+      <span class="faq-eyebrow">Quick Answers</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about studio visits, custom dinnerware commissions, and safe delivery.</p>
+    </div>
+
+    <div class="faq-accordion">
+      
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>Can I visit the gallery showroom without an appointment?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p style="margin: 0;">
+            Yes! Our gallery showroom is freely open to the public Tuesday through Sunday. You are welcome to browse our shelves, hold the pieces, and meet resident artisans. If you would like to discuss a custom wedding registry or restaurant tableware commission, we suggest booking an appointment in advance.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>How long do bespoke pottery commissions take?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p style="margin: 0;">
+            Custom pieces generally take 4 to 6 weeks from initial consultation to completion. This timeline ensures proper slow drying (preventing warps/cracks), a 1,800°F bisque firing, custom glaze application, and a final 2,200°F stoneware reduction firing.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>How is fragile pottery packaged for shipment?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p style="margin: 0;">
+            We use 100% plastic-free, recyclable honeycomb paper wrap and double-walled cartons. In the rare event an item is damaged during transit, simply send us a photograph within 48 hours and we will replace it or issue a full refund immediately.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>Can I book a private pottery workshop for a group?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p style="margin: 0;">
+            Yes, we host private sessions for groups of 4 to 12 guests. These are popular for birthdays, creative retreats, and family gatherings. All materials, wheel throwing guidance, glaze finishing, and kiln firings are included.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>Are all your ceramic pieces food, microwave, and dishwasher safe?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p style="margin: 0;">
+            All our functional cups, bowls, and plates are glazed with non-toxic, lead-free food-safe minerals and vitrified at high temperatures. While dishwasher safe, we recommend handwashing with gentle soap to preserve unique matte glaze finishes over decades.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Accordion Toggle Script -->
+  <script>
+    document.querySelectorAll('.contact-faq-section .faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const isActive = item.classList.contains('active');
+
+        // Close all other open items
+        document.querySelectorAll('.contact-faq-section .faq-item').forEach(otherItem => {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        // Toggle current item
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 30 + 'px';
+        }
+      });
+    });
+  </script>
+</section>
+
+<section class="pottery-newsletter-section" id="newsletter">
+  <style>
+    .pottery-newsletter-section {
+      --blog-bg: #f5f1e9;
+      --blog-card: #fffdf9;
+      --blog-text: #263c39;
+      --blog-muted: #737b73;
+      --blog-accent: #b86f50;
+      background: var(--blog-bg);
+      color: var(--blog-text);
+      padding: 0 6% 90px;
+      font-family: "DM Sans", sans-serif;
+    }
+    .pottery-newsletter-section * {
+      box-sizing: border-box;
+    }
+    .newsletter-box {
+      max-width: 1250px;
+      margin: 0 auto;
+      background: var(--blog-card);
+      border-radius: 20px;
+      border: 1px solid rgba(38, 60, 57, 0.09);
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(38, 60, 57, 0.06);
+    }
+    .newsletter-content {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .newsletter-badge {
+      display: inline-block;
+      background: rgba(184, 111, 80, 0.14);
+      color: var(--blog-accent);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
+    .newsletter-content h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.25;
+      margin: 0 0 14px;
+    }
+    .newsletter-content p {
+      color: var(--blog-muted);
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 0 0 30px;
+    }
+    /* Newsletter Form */
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .newsletter-input {
+      flex: 1;
+      padding: 14px 18px;
+      border: 1.5px solid rgba(38, 60, 57, 0.15);
+      border-radius: 6px;
+      background: rgba(128, 128, 128, 0.05);
+      color: inherit;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .newsletter-input:focus {
+      border-color: var(--blog-accent);
+    }
+    .newsletter-submit {
+      padding: 14px 28px;
+      background: var(--blog-accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: opacity 0.2s ease;
+      white-space: nowrap;
+    }
+    .newsletter-submit:hover {
+      opacity: 0.9;
+    }
+    .newsletter-note {
+      font-size: 12px;
+      color: var(--blog-muted);
+      margin-top: 14px;
+    }
+    .newsletter-success {
+      display: none;
+      background: rgba(46, 125, 50, 0.12);
+      color: #2e7d32;
+      padding: 12px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 15px;
+    }
+    /* Dark mode */
+    html[data-theme="dark"] .pottery-newsletter-section {
+      --blog-bg: #172522;
+      --blog-card: #22332f;
+      --blog-text: #f2ece2;
+      --blog-muted: #bdc8c0;
+      --blog-accent: #d99a79;
+    }
+    html[data-theme="dark"] .newsletter-box {
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    html[data-theme="dark"] .newsletter-input {
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+    html[data-theme="dark"] .newsletter-success {
+      color: #81c784;
+    }
+    @media (max-width: 576px) {
+      .newsletter-box {
+        padding: 40px 20px;
+      }
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <div class="newsletter-box">
+  <div class="newsletter-content">
+    <span class="newsletter-badge">Studio Desk & Concierge</span>
+    <h2>Stay Connected with Our Studio Desk</h2>
+    <p>
+      Planning a custom dinnerware commission, private group workshop, or gallery visit? 
+      Drop your email to receive direct notifications for open consultation slots, private 
+      studio visits, and custom order availability.
+    </p>
+
+    <form id="studioNewsletterForm" class="newsletter-form" onsubmit="event.preventDefault(); document.getElementById('newsletterSuccess').style.display='block'; this.reset();">
+      <input type="email" class="newsletter-input" placeholder="Enter your email to connect..." required autocomplete="email">
+      <button type="submit" class="newsletter-submit">Connect with Us</button>
+    </form>
+    
+    <div id="newsletterSuccess" class="newsletter-success">
+      ✓ Thank you! Our studio team will keep you updated on private consultations and upcoming openings.
+    </div>
+
+    <div class="newsletter-note">
+      Direct studio correspondence only. We respect your privacy.
+    </div>
+  </div>
+</div>
+</section>
     <!-- ================= FOOTER ================= -->
 
     
