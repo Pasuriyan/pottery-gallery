@@ -165,7 +165,290 @@
         </div>
 
     </header>
+<section class="shop-hero-section" id="shop-hero">
+  <style>
+    .shop-hero-section {
+      --shop-bg: #f5f1e9;
+      --shop-card: #fffdf9;
+      --shop-text: #263c39;
+      --shop-muted: #737b73;
+      --shop-accent: #b86f50;
+      --shop-border: rgba(38, 60, 57, 0.1);
+      background-color: var(--shop-bg);
+      color: var(--shop-text);
+      padding: 70px 6% 60px;
+      font-family: "DM Sans", sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
 
+    .shop-hero-section * {
+      box-sizing: border-box;
+    }
+
+    .shop-hero-container {
+      max-width: 1250px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    /* Left Column */
+    .shop-hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .shop-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(184, 111, 80, 0.14);
+      color: var(--shop-accent);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 6px 14px;
+      border-radius: 30px;
+      margin-bottom: 18px;
+    }
+
+    .shop-hero-content h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(34px, 4.5vw, 56px);
+      line-height: 1.15;
+      margin: 0 0 18px;
+      color: var(--shop-text);
+    }
+
+    .shop-hero-content p {
+      color: var(--shop-muted);
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 0 0 30px;
+      max-width: 540px;
+    }
+
+    /* Category Filter Pills */
+    .shop-category-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 35px;
+    }
+
+    .shop-pill {
+      background: var(--shop-card);
+      color: var(--shop-text);
+      border: 1px solid var(--shop-border);
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .shop-pill:hover,
+    .shop-pill.active {
+      background: var(--shop-accent);
+      color: #ffffff;
+      border-color: var(--shop-accent);
+      transform: translateY(-2px);
+    }
+
+    .shop-pill .count {
+      opacity: 0.65;
+      font-size: 11px;
+    }
+
+    /* Trust Highlights Strip */
+    .shop-trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 25px;
+      border-top: 1px solid var(--shop-border);
+      width: 100%;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--shop-muted);
+    }
+
+    .trust-item i {
+      color: var(--shop-accent);
+      font-size: 16px;
+    }
+
+    /* Right Column: Visual Showcase */
+    .shop-hero-visual {
+      position: relative;
+    }
+
+    .shop-main-image-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--shop-border);
+      box-shadow: 0 24px 50px rgba(38, 60, 57, 0.12);
+      position: relative;
+      background: var(--shop-card);
+    }
+
+    .shop-main-image {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .shop-main-image-wrap:hover .shop-main-image {
+      transform: scale(1.03);
+    }
+
+    /* Floating Studio Release Card */
+    .floating-batch-card {
+      position: absolute;
+      bottom: -22px;
+      left: -24px;
+      background: var(--shop-card);
+      border: 1px solid var(--shop-border);
+      padding: 16px 22px;
+      border-radius: 14px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      backdrop-filter: blur(8px);
+      animation: floatBadge 3.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatBadge {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+
+    .batch-dot {
+      width: 10px;
+      height: 10px;
+      background: #2e7d32;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.2);
+    }
+
+    .batch-details strong {
+      display: block;
+      font-size: 13px;
+      color: var(--shop-text);
+    }
+
+    .batch-details span {
+      font-size: 11px;
+      color: var(--shop-muted);
+    }
+
+    /* Dark Mode */
+    html[data-theme="dark"] .shop-hero-section {
+      --shop-bg: #172522;
+      --shop-card: #22332f;
+      --shop-text: #f2ece2;
+      --shop-muted: #bdc8c0;
+      --shop-accent: #d99a79;
+      --shop-border: rgba(255, 255, 255, 0.08);
+    }
+
+    html[data-theme="dark"] .floating-batch-card {
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .shop-hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .shop-main-image {
+        height: 380px;
+      }
+      .floating-batch-card {
+        bottom: 15px;
+        left: 15px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .shop-hero-section {
+        padding: 45px 18px 40px;
+      }
+      .shop-trust-strip {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+
+  <div class="shop-hero-container">
+
+    <!-- Left: Content & Categories -->
+    <div class="shop-hero-content">
+      <span class="shop-eyebrow">
+        <span>✨</span> Small-Batch Ceramic Collection
+      </span>
+
+      <h1>Handcrafted Objects for Everyday Rituals</h1>
+
+      <p>
+        Explore one-of-a-kind dinnerware, tactile coffee mugs, sculptural vases, 
+        and tabletop decor—each piece wheel-thrown and wood-fired by our studio artisans.
+      </p>
+
+     
+      <!-- Trust Badges -->
+      <div class="shop-trust-strip">
+        <div class="trust-item">
+          <i class="fa-solid fa-leaf"></i>
+          <span>100% Food-Safe & Non-Toxic</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-box-open"></i>
+          <span>Plastic-Free Padded Packaging</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-fire-burner"></i>
+          <span>High-Fired Durable Stoneware</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Curated Visual Showcase -->
+    <div class="shop-hero-visual">
+      <div class="shop-main-image-wrap">
+        <img 
+          class="shop-main-image" 
+          src="https://images.unsplash.com/photo-1590736969955-71cc94801759?auto=format&fit=crop&w=1000&q=85" 
+          alt="Curated handmade ceramic dinnerware on warm linen table"
+          loading="eager"
+        >
+      </div>
+
+      
+    </div>
+
+  </div>
+</section>
 <section class="section">
 
     <div class="container-custom">

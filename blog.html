@@ -811,7 +811,7 @@ body {
     <div class="hero-featured-card">
       <div class="hero-featured-img-wrap">
         <img class="hero-featured-img" 
-             src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1200&q=85" 
+             src="https://images.pexels.com/photos/10526670/pexels-photo-10526670.jpeg" 
              alt="Potter shaping a celadon clay vessel">
         <span class="featured-badge">Featured Essay</span>
       </div>
@@ -824,17 +824,7 @@ body {
           Master ceramicist Clara Vance shares how mineral reduction and iron oxide 
           turn coarse earth into jade-like translucent tableware through 18 hours of wood firing.
         </p>
-        
-        <div class="author-info">
-          <img class="author-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Clara Vance">
-          <div class="author-details">
-            <strong>Clara Vance</strong>
-            <span>Resident Potter & Glaze Chemist</span>
-          </div>
-        </div>
-        <a href="#blog" class="hero-featured-btn">
-          Explore Studio Stories <span>↓</span>
-        </a>
+  
       </div>
     </div>
   </div>
@@ -1342,7 +1332,7 @@ body {
     <article class="pottery-blog-card">
       <div class="pottery-blog-image-wrap">
         <img class="pottery-blog-image"
-          src="https://images.unsplash.com/photo-1576020799627-aeac74d58066?auto=format&fit=crop&w=900&q=85"
+          src="https://images.pexels.com/photos/33661399/pexels-photo-33661399.jpeg"
           alt="Artisan ceramic bowls and pottery with natural textures"
           loading="lazy">
         <span class="pottery-blog-category">Slow Living</span>
@@ -1457,8 +1447,8 @@ body {
           category: "Slow Living",
           meta: "August 26, 2026 · 5 min read",
           images: [
-            "https://images.unsplash.com/photo-1576020799627-aeac74d58066?auto=format&fit=crop&w=900&q=85",
-            "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85"
+            "https://images.pexels.com/photos/16534567/pexels-photo-16534567.jpeg",
+            "https://images.pexels.com/photos/3847440/pexels-photo-3847440.jpeg"
           ],
           quote: "“A gift made by hand carries an intimacy and presence that mass production can never replicate.”",
           paragraphs: [
@@ -1538,6 +1528,429 @@ body {
       });
     })();
   </script>
+</section>
+  
+<section class="pottery-visual-journal" id="studio-gallery">
+  <style>
+    .pottery-visual-journal {
+      --vj-bg: #f5f1e9;
+      --vj-card: #fffdf9;
+      --vj-text: #263c39;
+      --vj-muted: #737b73;
+      --vj-accent: #b86f50;
+      background: var(--vj-bg);
+      color: var(--vj-text);
+      padding: 70px 6% 85px;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .pottery-visual-journal * {
+      box-sizing: border-box;
+    }
+
+    .vj-container {
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    /* Heading */
+    .vj-heading {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 45px;
+    }
+
+    .vj-eyebrow {
+      color: var(--vj-accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .vj-heading h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(30px, 4vw, 44px);
+      margin: 0 0 12px;
+    }
+
+    .vj-heading p {
+      color: var(--vj-muted);
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Visual Grid */
+    .vj-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    /* Individual Image Card */
+    .vj-item {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      height: 320px;
+      background: var(--vj-card);
+      border: 1px solid rgba(38, 60, 57, 0.08);
+      box-shadow: 0 8px 24px rgba(38, 60, 57, 0.06);
+    }
+
+    .vj-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .vj-item:hover .vj-img {
+      transform: scale(1.08);
+    }
+
+    /* Overlay on Hover */
+    .vj-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(23, 37, 34, 0.88) 0%,
+        rgba(23, 37, 34, 0.25) 55%,
+        transparent 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 22px;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .vj-item:hover .vj-overlay {
+      opacity: 1;
+    }
+
+    .vj-tag {
+      align-self: flex-start;
+      background: var(--vj-accent);
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      transform: translateY(10px);
+      transition: transform 0.35s ease;
+    }
+
+    .vj-title {
+      font-family: "Playfair Display", Georgia, serif;
+      color: #ffffff;
+      font-size: 18px;
+      margin: 0 0 4px;
+      line-height: 1.3;
+      transform: translateY(10px);
+      transition: transform 0.35s ease 0.05s;
+    }
+
+    .vj-caption {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 12px;
+      margin: 0;
+      line-height: 1.5;
+      transform: translateY(10px);
+      transition: transform 0.35s ease 0.1s;
+    }
+
+    .vj-item:hover .vj-tag,
+    .vj-item:hover .vj-title,
+    .vj-item:hover .vj-caption {
+      transform: translateY(0);
+    }
+
+    /* Footer Strip */
+    .vj-footer {
+      margin-top: 40px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--vj-muted);
+    }
+
+    .vj-footer a {
+      color: var(--vj-accent);
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .vj-footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Dark Mode */
+    html[data-theme="dark"] .pottery-visual-journal {
+      --vj-bg: #172522;
+      --vj-card: #22332f;
+      --vj-text: #f2ece2;
+      --vj-muted: #bdc8c0;
+      --vj-accent: #d99a79;
+    }
+
+    html[data-theme="dark"] .vj-item {
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .vj-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+      .vj-item {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .vj-grid {
+        grid-template-columns: 1fr;
+      }
+      .vj-item {
+        height: 260px;
+      }
+      .pottery-visual-journal {
+        padding: 50px 18px;
+      }
+    }
+  </style>
+
+  <div class="vj-container">
+    
+    <!-- Section Header -->
+    <div class="vj-heading">
+      <span class="vj-eyebrow">Studio Field Notes</span>
+      <h2>Glimpses from the Studio Floor</h2>
+      <p>
+        Moments of quiet craft, raw clay textures, and kiln discoveries 
+        captured between throwing sessions and slow tea breaks.
+      </p>
+    </div>
+
+    <!-- Photo Grid -->
+    <div class="vj-grid">
+
+      <!-- Photo 1: Greenware drying -->
+      <div class="vj-item">
+        <img 
+          class="vj-img" 
+          src="https://images.pexels.com/photos/15900153/pexels-photo-15900153.jpeg" 
+          alt="Freshly thrown stoneware mugs resting on wooden studio drying boards" 
+          loading="lazy"
+        >
+        <div class="vj-overlay">
+          <span class="vj-tag">Drying Stage</span>
+          <h3 class="vj-title">Greenware at Rest</h3>
+          <p class="vj-caption">Slow-drying stoneware cylinders waiting for foot trimming.</p>
+        </div>
+      </div>
+
+      <!-- Photo 2: Trimming leather-hard clay -->
+      <div class="vj-item">
+        <img 
+          class="vj-img" 
+          src="https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80" 
+          alt="Close-up of ribbons of clay shaving off on the wheel" 
+          loading="lazy"
+        >
+        <div class="vj-overlay">
+          <span class="vj-tag">Detail Work</span>
+          <h3 class="vj-title">The Art of the Foot</h3>
+          <p class="vj-caption">Ribbons of clay curling away during leather-hard trimming.</p>
+        </div>
+      </div>
+
+      <!-- Photo 3: Glazed cups with botanical lips -->
+      <div class="vj-item">
+        <img 
+          class="vj-img" 
+          src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=800&q=80" 
+          alt="Finished handmade pottery cups on natural wood" 
+          loading="lazy"
+        >
+        <div class="vj-overlay">
+          <span class="vj-tag">Kiln Drop</span>
+          <h3 class="vj-title">Fresh from the Kiln</h3>
+          <p class="vj-caption">Warm mineral celadon glaze with iron-speckled clay rim.</p>
+        </div>
+      </div>
+
+      <!-- Photo 4: Table setting with botanicals -->
+      <div class="vj-item">
+        <img 
+          class="vj-img" 
+          src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=800&q=80" 
+          alt="Artisan ceramic tabletop arrangement with botanical elements" 
+          loading="lazy"
+        >
+        <div class="vj-overlay">
+          <span class="vj-tag">Slow Living</span>
+          <h3 class="vj-title">The Morning Table</h3>
+          <p class="vj-caption">Everyday rituals elevated by hand-pinched pottery.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Social Connection Footer -->
+    <div class="vj-footer">
+      <span>Follow our daily studio stories on Instagram:</span>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-instagram"></i> @clayandco.studio
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- EXPLORE TOPICS -->
+<section class="blog-topics">
+  <style>
+    .blog-topics {
+      padding: 75px 6%;
+      background: #e9eee5;
+      color: #293d36;
+      text-align: center;
+    }
+
+    .blog-topics-inner {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .blog-topics h2 {
+      font: 42px "Playfair Display", Georgia, serif;
+      margin: 12px 0;
+    }
+
+    .blog-topics-intro {
+      color: #66736a;
+      line-height: 1.8;
+      margin-bottom: 35px;
+    }
+
+    .blog-topic-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .blog-topic {
+      padding: 30px 18px;
+      background: #fffdf8;
+      border: 1px solid #d8dfd3;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #293d36;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .blog-topic:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px #293d3618;
+    }
+
+    .blog-topic .topic-icon {
+      font-size: 32px;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .blog-topic h3 {
+      font: 21px "Playfair Display", Georgia, serif;
+      margin: 0 0 10px;
+    }
+
+    .blog-topic p {
+      color: #70786f;
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media(max-width: 768px) {
+      .blog-topic-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-topics h2 { font-size: 34px; }
+    }
+
+    @media(max-width: 430px) {
+      .blog-topic-grid { grid-template-columns: 1fr; }
+    }
+
+    html[data-theme="dark"] .blog-topics {
+      background: #202f29;
+      color: #f4ede3;
+    }
+
+    html[data-theme="dark"] .blog-topic {
+      background: #293b34;
+      border-color: #40544a;
+      color: #f4ede3;
+    }
+
+    html[data-theme="dark"] .blog-topic p,
+    html[data-theme="dark"] .blog-topics-intro {
+      color: #c0c9c1;
+    }
+  </style>
+
+  <div class="blog-topics-inner">
+    <span class="blog-featured-label">Find Your Inspiration</span>
+    <h2>Explore Our Journal</h2>
+    <p class="blog-topics-intro">
+      Follow your curiosity and discover something new about ceramics.
+    </p>
+
+    <div class="blog-topic-grid">
+      <a class="blog-topic" href="#blog">
+        <span class="topic-icon">🏺</span>
+        <h3>Pottery Guides</h3>
+        <p>Learn about clay, glazing, and traditional techniques.</p>
+      </a>
+
+      <a class="blog-topic" href="#blog">
+        <span class="topic-icon">🎨</span>
+        <h3>Artist Stories</h3>
+        <p>Meet the makers and discover their creative journeys.</p>
+      </a>
+
+      <a class="blog-topic" href="#blog">
+        <span class="topic-icon">🏡</span>
+        <h3>Home Styling</h3>
+        <p>Bring handcrafted beauty into your everyday spaces.</p>
+      </a>
+
+      <a class="blog-topic" href="#blog">
+        <span class="topic-icon">✨</span>
+        <h3>Ceramic Care</h3>
+        <p>Keep your favourite handmade pieces looking beautiful.</p>
+      </a>
+    </div>
+  </div>
 </section>
 
 <section class="pottery-newsletter-section" id="newsletter">
@@ -1700,139 +2113,7 @@ body {
   </div>
 </section>
 
-<!-- EXPLORE TOPICS -->
-<section class="blog-topics">
-  <style>
-    .blog-topics {
-      padding: 75px 6%;
-      background: #e9eee5;
-      color: #293d36;
-      text-align: center;
-    }
 
-    .blog-topics-inner {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .blog-topics h2 {
-      font: 42px "Playfair Display", Georgia, serif;
-      margin: 12px 0;
-    }
-
-    .blog-topics-intro {
-      color: #66736a;
-      line-height: 1.8;
-      margin-bottom: 35px;
-    }
-
-    .blog-topic-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .blog-topic {
-      padding: 30px 18px;
-      background: #fffdf8;
-      border: 1px solid #d8dfd3;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #293d36;
-      transition: transform .25s, box-shadow .25s;
-    }
-
-    .blog-topic:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px #293d3618;
-    }
-
-    .blog-topic .topic-icon {
-      font-size: 32px;
-      display: block;
-      margin-bottom: 14px;
-    }
-
-    .blog-topic h3 {
-      font: 21px "Playfair Display", Georgia, serif;
-      margin: 0 0 10px;
-    }
-
-    .blog-topic p {
-      color: #70786f;
-      font-size: 13px;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    @media(max-width: 768px) {
-      .blog-topic-grid { grid-template-columns: repeat(2, 1fr); }
-      .blog-topics h2 { font-size: 34px; }
-    }
-
-    @media(max-width: 430px) {
-      .blog-topic-grid { grid-template-columns: 1fr; }
-    }
-
-    html[data-theme="dark"] .blog-topics {
-      background: #202f29;
-      color: #f4ede3;
-    }
-
-    html[data-theme="dark"] .blog-topic {
-      background: #293b34;
-      border-color: #40544a;
-      color: #f4ede3;
-    }
-
-    html[data-theme="dark"] .blog-topic p,
-    html[data-theme="dark"] .blog-topics-intro {
-      color: #c0c9c1;
-    }
-  </style>
-
-  <div class="blog-topics-inner">
-    <span class="blog-featured-label">Find Your Inspiration</span>
-    <h2>Explore Our Journal</h2>
-    <p class="blog-topics-intro">
-      Follow your curiosity and discover something new about ceramics.
-    </p>
-
-    <div class="blog-topic-grid">
-      <a class="blog-topic" href="#blog">
-        <span class="topic-icon">🏺</span>
-        <h3>Pottery Guides</h3>
-        <p>Learn about clay, glazing, and traditional techniques.</p>
-      </a>
-
-      <a class="blog-topic" href="#blog">
-        <span class="topic-icon">🎨</span>
-        <h3>Artist Stories</h3>
-        <p>Meet the makers and discover their creative journeys.</p>
-      </a>
-
-      <a class="blog-topic" href="#blog">
-        <span class="topic-icon">🏡</span>
-        <h3>Home Styling</h3>
-        <p>Bring handcrafted beauty into your everyday spaces.</p>
-      </a>
-
-      <a class="blog-topic" href="#blog">
-        <span class="topic-icon">✨</span>
-        <h3>Ceramic Care</h3>
-        <p>Keep your favourite handmade pieces looking beautiful.</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- NEWSLETTER SIGNUP -->
-<!-- ============================================
-     BLOG NEWSLETTER — LIGHT & DARK MODE
-============================================ -->
 <!-- 
 <section class="blog-newsletter"
     style="padding:75px 6%;
