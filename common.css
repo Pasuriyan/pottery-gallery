@@ -1480,3 +1480,310 @@ html[dir="rtl"] .hero-actions {
   border-color: #b86f50;
   transform: translateY(-3px);
 }
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--gold-primary, #b38b24);
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+    background: #96721c;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.nav-actions .icon-button {
+    flex-shrink: 0;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .nav-actions {
+        gap: 8px;
+    }
+
+    .nav-cta {
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .nav-actions {
+        gap: 5px;
+    }
+
+    .nav-cta {
+        padding: 9px 11px;
+        font-size: 11px;
+        gap: 5px;
+    }
+
+    .nav-cta i {
+        font-size: 10px;
+    }
+}
+
+/* Mobile navbar fix - 360px */
+@media screen and (max-width: 380px) {
+
+    .navbar {
+        padding: 0;
+    }
+
+    .navbar .container,
+    .navbar .container-fluid {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5px;
+        flex-shrink: 0;
+        margin-left: auto;
+    }
+
+    .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 9px 11px;
+        font-size: 11px;
+        line-height: 1;
+        white-space: nowrap;
+        border-radius: 25px;
+    }
+
+    .nav-cta i {
+        font-size: 10px;
+    }
+
+    .nav-actions .icon-button {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        padding: 0;
+        flex-shrink: 0;
+    }
+
+    /* Keep logo and actions on the same row */
+    .navbar .container,
+    .navbar .container-fluid {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+
+    .navbar-brand {
+        margin-right: 5px;
+        flex-shrink: 1;
+        min-width: 0;
+    }
+
+    .navbar-brand img {
+        max-width: 32px;
+        height: auto;
+    }
+
+    .navbar-brand span {
+        font-size: 20px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 380px) {
+
+    /* Keep the entire navbar on one line */
+    .navbar .container,
+    .navbar .container-fluid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 10px 8px !important;
+        gap: 5px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Logo */
+    .navbar-brand {
+        display: flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+        margin: 0 !important;
+        flex: 0 1 auto !important;
+        min-width: 0 !important;
+        white-space: nowrap;
+    }
+
+    .navbar-brand img {
+        width: 27px !important;
+        height: 27px !important;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .navbar-brand span {
+        font-size: 17px !important;
+        white-space: nowrap;
+    }
+
+    /* Right-side controls */
+    .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 4px !important;
+        margin-left: auto !important;
+        flex: 0 0 auto !important;
+    }
+
+    /* Dark mode and RTL buttons */
+    .nav-actions .icon-button {
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Compact Get in Touch button */
+    .nav-actions .nav-cta {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 3px !important;
+        padding: 9px 8px !important;
+        font-size: 10px !important;
+        line-height: 1 !important;
+        letter-spacing: -0.2px;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+    }
+
+    .nav-actions .nav-cta i {
+        font-size: 10px !important;
+    }
+}
+
+/* Navbar actions - 360px mobile view */
+@media screen and (max-width: 360px) {
+
+    .nav-actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        gap: 4px;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    /* Dark mode and RTL buttons */
+    .nav-actions .icon-button {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 12px;
+    }
+
+    /* Get in Touch CTA */
+    .nav-actions .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        padding: 9px 7px;
+        font-size: 10px;
+        line-height: 1;
+        white-space: nowrap;
+        flex-shrink: 0;
+        margin: 0;
+        border-radius: 25px;
+    }
+
+    .nav-actions .nav-cta i {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        gap: 4px;
+        flex-shrink: 0;
+    }
+
+    .nav-actions .icon-button {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .nav-actions .nav-cta {
+        padding: 8px 9px;
+        font-size: 11px;
+        gap: 4px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .nav-actions .nav-cta i {
+        font-size: 10px;
+    }
+
+    .nav-actions .menu-toggle {
+        display: inline-flex;
+    }
+}
+
+
+
