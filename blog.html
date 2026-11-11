@@ -1833,128 +1833,208 @@ body {
 
 <!-- EXPLORE TOPICS -->
 <section class="blog-topics">
-  <style>
-    .blog-topics {
-      padding: 75px 6%;
-      background: #e9eee5;
-      color: #293d36;
-      text-align: center;
-    }
 
-    .blog-topics-inner {
-      max-width: 1200px;
-      margin: auto;
+<style>
+.blog-topics {
+    padding: 75px 6%;
+    background: #e9eee5;
+    color: #293d36;
+    text-align: center;
+}
+
+.blog-topics-inner {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.blog-topics h2 {
+    font: 42px "Playfair Display", Georgia, serif;
+    margin: 12px 0;
+}
+
+.blog-topics-intro {
+    color: #66736a;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.blog-topic-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.blog-topic {
+    padding: 0 0 25px;
+    background: #fffdf8;
+    border: 1px solid #d8dfd3;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #293d36;
+    overflow: hidden;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.blog-topic:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px #293d3618;
+}
+
+.blog-topic img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+}
+
+.blog-topic:hover img {
+    transform: scale(1.05);
+}
+
+.blog-topic-content {
+    padding: 22px 18px 0;
+}
+
+.blog-topic h3 {
+    font: 21px "Playfair Display", Georgia, serif;
+    margin: 0 0 10px;
+}
+
+.blog-topic p {
+    color: #70786f;
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Tablet */
+@media(max-width: 768px) {
+    .blog-topic-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .blog-topics h2 {
-      font: 42px "Playfair Display", Georgia, serif;
-      margin: 12px 0;
+        font-size: 34px;
     }
 
-    .blog-topics-intro {
-      color: #66736a;
-      line-height: 1.8;
-      margin-bottom: 35px;
+    .blog-topic img {
+        height: 180px;
     }
+}
 
+/* Mobile */
+@media(max-width: 430px) {
     .blog-topic-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
+        grid-template-columns: 1fr;
     }
 
-    .blog-topic {
-      padding: 30px 18px;
-      background: #fffdf8;
-      border: 1px solid #d8dfd3;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #293d36;
-      transition: transform .25s, box-shadow .25s;
+    .blog-topic img {
+        height: 210px;
     }
 
-    .blog-topic:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px #293d3618;
+    .blog-topics {
+        padding: 50px 18px;
     }
+}
 
-    .blog-topic .topic-icon {
-      font-size: 32px;
-      display: block;
-      margin-bottom: 14px;
-    }
+/* Dark Mode */
+html[data-theme="dark"] .blog-topics {
+    background: #202f29;
+    color: #f4ede3;
+}
 
-    .blog-topic h3 {
-      font: 21px "Playfair Display", Georgia, serif;
-      margin: 0 0 10px;
-    }
+html[data-theme="dark"] .blog-topic {
+    background: #293b34;
+    border-color: #40544a;
+    color: #f4ede3;
+}
 
-    .blog-topic p {
-      color: #70786f;
-      font-size: 13px;
-      line-height: 1.7;
-      margin: 0;
-    }
+html[data-theme="dark"] .blog-topic p,
+html[data-theme="dark"] .blog-topics-intro {
+    color: #c0c9c1;
+}
+</style>
 
-    @media(max-width: 768px) {
-      .blog-topic-grid { grid-template-columns: repeat(2, 1fr); }
-      .blog-topics h2 { font-size: 34px; }
-    }
+<div class="blog-topics-inner">
 
-    @media(max-width: 430px) {
-      .blog-topic-grid { grid-template-columns: 1fr; }
-    }
-
-    html[data-theme="dark"] .blog-topics {
-      background: #202f29;
-      color: #f4ede3;
-    }
-
-    html[data-theme="dark"] .blog-topic {
-      background: #293b34;
-      border-color: #40544a;
-      color: #f4ede3;
-    }
-
-    html[data-theme="dark"] .blog-topic p,
-    html[data-theme="dark"] .blog-topics-intro {
-      color: #c0c9c1;
-    }
-  </style>
-
-  <div class="blog-topics-inner">
     <span class="blog-featured-label">Find Your Inspiration</span>
+
     <h2>Explore Our Journal</h2>
+
     <p class="blog-topics-intro">
-      Follow your curiosity and discover something new about ceramics.
+        Follow your curiosity and discover something new about ceramics.
     </p>
 
     <div class="blog-topic-grid">
-      <a class="blog-topic" href="#blog">
-        <span class="topic-icon">🏺</span>
-        <h3>Pottery Guides</h3>
-        <p>Learn about clay, glazing, and traditional techniques.</p>
-      </a>
 
-      <a class="blog-topic" href="#blog">
-        <span class="topic-icon">🎨</span>
-        <h3>Artist Stories</h3>
-        <p>Meet the makers and discover their creative journeys.</p>
-      </a>
+        <!-- Pottery Guides -->
+        <a class="blog-topic" href="#blog">
 
-      <a class="blog-topic" href="#blog">
-        <span class="topic-icon">🏡</span>
-        <h3>Home Styling</h3>
-        <p>Bring handcrafted beauty into your everyday spaces.</p>
-      </a>
+            <img
+                src="https://images.pexels.com/photos/6694332/pexels-photo-6694332.jpeg"
+                alt="Handmade pottery and ceramic making"
+                loading="lazy"
+            >
 
-      <a class="blog-topic" href="#blog">
-        <span class="topic-icon">✨</span>
-        <h3>Ceramic Care</h3>
-        <p>Keep your favourite handmade pieces looking beautiful.</p>
-      </a>
+            <div class="blog-topic-content">
+                <h3>Pottery Guides</h3>
+                <p>Learn about clay, glazing, and traditional techniques.</p>
+            </div>
+
+        </a>
+
+        <!-- Artist Stories -->
+        <a class="blog-topic" href="#blog">
+
+            <img
+                src="https://images.pexels.com/photos/4992451/pexels-photo-4992451.jpeg"
+                alt="Ceramic artist creating handmade pottery"
+                loading="lazy"
+            >
+
+            <div class="blog-topic-content">
+                <h3>Artist Stories</h3>
+                <p>Meet the makers and discover their creative journeys.</p>
+            </div>
+
+        </a>
+
+        <!-- Home Styling -->
+        <a class="blog-topic" href="#blog">
+
+            <img
+                src="https://images.pexels.com/photos/6207816/pexels-photo-6207816.jpeg"
+                alt="Elegant ceramic decorations in a home"
+                loading="lazy"
+            >
+
+            <div class="blog-topic-content">
+                <h3>Home Styling</h3>
+                <p>Bring handcrafted beauty into your everyday spaces.</p>
+            </div>
+
+        </a>
+
+        <!-- Ceramic Care -->
+        <a class="blog-topic" href="#blog">
+
+            <img
+                src="https://images.pexels.com/photos/4992382/pexels-photo-4992382.jpeg"
+                alt="Beautiful handmade ceramic pottery collection"
+                loading="lazy"
+            >
+
+            <div class="blog-topic-content">
+                <h3>Ceramic Care</h3>
+                <p>Keep your favourite handmade pieces looking beautiful.</p>
+            </div>
+
+        </a>
+
     </div>
-  </div>
+
+</div>
 </section>
 
 <section class="pottery-newsletter-section" id="newsletter">

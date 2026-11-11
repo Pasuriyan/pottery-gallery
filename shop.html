@@ -170,19 +170,31 @@
 
     </header>
 <section class="shop-hero-section" id="shop-hero">
+
   <style>
     .shop-hero-section {
-      --shop-bg: #f5f1e9;
-      --shop-card: #fffdf9;
-      --shop-text: #263c39;
-      --shop-muted: #737b73;
       --shop-accent: #b86f50;
-      --shop-border: rgba(38, 60, 57, 0.1);
-      background-color: var(--shop-bg);
-      color: var(--shop-text);
-      padding: 70px 6% 60px;
-      font-family: "DM Sans", sans-serif;
+
       position: relative;
+      min-height: 580px;
+      padding: 100px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #ffffff;
+      font-family: "DM Sans", sans-serif;
+
+      background:
+        linear-gradient(
+          rgba(20, 27, 24, 0.65),
+          rgba(20, 27, 24, 0.65)
+        ),
+        url("https://images.pexels.com/photos/7668384/pexels-photo-7668384.jpeg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       overflow: hidden;
     }
 
@@ -191,267 +203,250 @@
     }
 
     .shop-hero-container {
-      max-width: 1250px;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 900px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 50px;
+      display: flex;
+      justify-content: center;
       align-items: center;
     }
 
-    /* Left Column */
+    /* Hero Content */
+
     .shop-hero-content {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      text-align: center;
+      width: 100%;
     }
 
     .shop-eyebrow {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      background: rgba(184, 111, 80, 0.14);
-      color: var(--shop-accent);
+      background: rgba(184, 111, 80, 0.25);
+      color: #f3c5a8;
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
-      padding: 6px 14px;
+      padding: 8px 18px;
       border-radius: 30px;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(255,255,255,0.15);
     }
 
     .shop-hero-content h1 {
       font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(34px, 4.5vw, 56px);
+      font-size: clamp(36px, 5vw, 62px);
       line-height: 1.15;
-      margin: 0 0 18px;
-      color: var(--shop-text);
+      margin: 0 0 22px;
+      color: #ffffff;
+      max-width: 850px;
     }
 
     .shop-hero-content p {
-      color: var(--shop-muted);
+      color: rgba(255,255,255,0.9);
       font-size: 16px;
-      line-height: 1.8;
-      margin: 0 0 30px;
-      max-width: 540px;
+      line-height: 1.9;
+      margin: 0 auto 30px;
+      max-width: 680px;
     }
 
-    /* Category Filter Pills */
-    .shop-category-pills {
+    /* CTA Buttons */
+
+    .shop-hero-actions {
       display: flex;
+      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 15px;
       margin-bottom: 35px;
     }
 
-    .shop-pill {
-      background: var(--shop-card);
-      color: var(--shop-text);
-      border: 1px solid var(--shop-border);
-      padding: 8px 18px;
-      border-radius: 40px;
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.25s ease;
+    .shop-hero-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-    }
-
-    .shop-pill:hover,
-    .shop-pill.active {
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
       background: var(--shop-accent);
       color: #ffffff;
-      border-color: var(--shop-accent);
-      transform: translateY(-2px);
+      border: 1px solid var(--shop-accent);
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
     }
 
-    .shop-pill .count {
-      opacity: 0.65;
-      font-size: 11px;
+    .shop-hero-btn:hover {
+      background: #99583e;
+      border-color: #99583e;
+      color: #ffffff;
+      transform: translateY(-3px);
     }
 
-    /* Trust Highlights Strip */
+    /* Trust Badges */
+
     .shop-trust-strip {
       display: flex;
+      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 25px;
       padding-top: 25px;
-      border-top: 1px solid var(--shop-border);
+      border-top: 1px solid rgba(255,255,255,0.25);
       width: 100%;
     }
 
     .trust-item {
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      gap: 9px;
       font-size: 13px;
       font-weight: 500;
-      color: var(--shop-muted);
+      color: rgba(255,255,255,0.9);
     }
 
     .trust-item i {
-      color: var(--shop-accent);
+      color: #e5b18f;
       font-size: 16px;
     }
 
-    /* Right Column: Visual Showcase */
-    .shop-hero-visual {
-      position: relative;
-    }
-
-    .shop-main-image-wrap {
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--shop-border);
-      box-shadow: 0 24px 50px rgba(38, 60, 57, 0.12);
-      position: relative;
-      background: var(--shop-card);
-    }
-
-    .shop-main-image {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease;
-    }
-
-    .shop-main-image-wrap:hover .shop-main-image {
-      transform: scale(1.03);
-    }
-
-    /* Floating Studio Release Card */
-    .floating-batch-card {
-      position: absolute;
-      bottom: -22px;
-      left: -24px;
-      background: var(--shop-card);
-      border: 1px solid var(--shop-border);
-      padding: 16px 22px;
-      border-radius: 14px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14);
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      backdrop-filter: blur(8px);
-      animation: floatBadge 3.5s ease-in-out infinite alternate;
-    }
-
-    @keyframes floatBadge {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-8px); }
-    }
-
-    .batch-dot {
-      width: 10px;
-      height: 10px;
-      background: #2e7d32;
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.2);
-    }
-
-    .batch-details strong {
-      display: block;
-      font-size: 13px;
-      color: var(--shop-text);
-    }
-
-    .batch-details span {
-      font-size: 11px;
-      color: var(--shop-muted);
-    }
-
-    /* Dark Mode */
-    html[data-theme="dark"] .shop-hero-section {
-      --shop-bg: #172522;
-      --shop-card: #22332f;
-      --shop-text: #f2ece2;
-      --shop-muted: #bdc8c0;
-      --shop-accent: #d99a79;
-      --shop-border: rgba(255, 255, 255, 0.08);
-    }
-
-    html[data-theme="dark"] .floating-batch-card {
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
-    }
-
     /* Responsive */
-    @media (max-width: 992px) {
-      .shop-hero-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
+
+    @media (max-width: 768px) {
+      .shop-hero-section {
+        min-height: 560px;
+        padding: 75px 25px;
+        background-position: center;
       }
-      .shop-main-image {
-        height: 380px;
+
+      .shop-hero-content h1 {
+        font-size: 42px;
       }
-      .floating-batch-card {
-        bottom: 15px;
-        left: 15px;
+
+      .shop-hero-content p {
+        font-size: 15px;
+      }
+
+      .shop-trust-strip {
+        gap: 18px;
       }
     }
 
     @media (max-width: 576px) {
       .shop-hero-section {
-        padding: 45px 18px 40px;
+        min-height: 580px;
+        padding: 65px 18px;
       }
+
+      .shop-hero-content h1 {
+        font-size: 34px;
+      }
+
+      .shop-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.3px;
+      }
+
+      .shop-hero-content p {
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .shop-hero-actions {
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .shop-hero-btn {
+        padding: 12px 19px;
+        font-size: 13px;
+      }
+
       .shop-trust-strip {
         flex-direction: column;
-        gap: 12px;
+        gap: 14px;
+        align-items: center;
       }
+
+      .trust-item {
+        font-size: 12px;
+      }
+    }
+
+    /* Dark Mode */
+
+    html[data-theme="dark"] .shop-hero-section {
+      color: #ffffff;
     }
   </style>
 
   <div class="shop-hero-container">
 
-    <!-- Left: Content & Categories -->
-    <div class="shop-hero-content">
+    <div class="shop-hero-content" data-animate>
+
       <span class="shop-eyebrow">
-        <span>✨</span> Small-Batch Ceramic Collection
+        ✨ Small-Batch Ceramic Collection
       </span>
 
-      <h1>Handcrafted Objects for Everyday Rituals</h1>
+      <h1>
+        Handcrafted Objects for Everyday Rituals
+      </h1>
 
       <p>
-        Explore one-of-a-kind dinnerware, tactile coffee mugs, sculptural vases, 
-        and tabletop decor—each piece wheel-thrown and wood-fired by our studio artisans.
+        Explore one-of-a-kind dinnerware, tactile coffee mugs,
+        sculptural vases, and tabletop decor—each piece wheel-thrown
+        and wood-fired by our studio artisans.
       </p>
 
-     
+      <!-- CTA Buttons -->
+
+      <div class="shop-hero-actions">
+
+        <a href="shop.html" class="shop-hero-btn">
+          Explore Collection
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <a href="artist-spotlight.html" class="shop-hero-btn">
+          Meet Our Artisans
+        </a>
+
+      </div>
+
       <!-- Trust Badges -->
+
       <div class="shop-trust-strip">
+
         <div class="trust-item">
           <i class="fa-solid fa-leaf"></i>
           <span>100% Food-Safe & Non-Toxic</span>
         </div>
+
         <div class="trust-item">
           <i class="fa-solid fa-box-open"></i>
           <span>Plastic-Free Padded Packaging</span>
         </div>
+
         <div class="trust-item">
           <i class="fa-solid fa-fire-burner"></i>
           <span>High-Fired Durable Stoneware</span>
         </div>
-      </div>
-    </div>
 
-    <!-- Right: Curated Visual Showcase -->
-    <div class="shop-hero-visual">
-      <div class="shop-main-image-wrap">
-        <img 
-          class="shop-main-image" 
-          src="https://images.pexels.com/photos/7668384/pexels-photo-7668384.jpeg" 
-          alt="Curated handmade ceramic dinnerware on warm linen table"
-          loading="eager"
-        >
       </div>
 
-      
     </div>
 
   </div>
+
 </section>
 <section class="section">
 
@@ -653,6 +648,507 @@
     </div>
 
 </section>
+
+<!-- new section  -->
+ 
+<section class="section" id="ceramic-collection">
+  <style>
+    /* Product Section */
+    #ceramic-collection {
+      padding: 60px 0;
+    }
+
+    #ceramic-collection .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    /* Product Card */
+    #ceramic-collection .product-card {
+      background: #fff;
+      border: 1px solid #ead9ca;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #ceramic-collection .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+    }
+
+    /* Product Image */
+    #ceramic-collection .card-image {
+      width: 100%;
+      height: 270px;
+      overflow: hidden;
+    }
+
+    #ceramic-collection .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    #ceramic-collection .product-card:hover .card-image img {
+      transform: scale(1.05);
+    }
+
+    /* Product Content */
+    #ceramic-collection .card-body {
+      padding: 25px 27px 27px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    #ceramic-collection .card-meta {
+      color: #ad5035;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    #ceramic-collection .card-body h3 {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: 500;
+      color: #21160f;
+      margin: 0 0 12px;
+    }
+
+    #ceramic-collection .card-body p {
+      color: #75675e;
+      font-size: 17px;
+      line-height: 1.8;
+      margin: 0;
+      flex: 1;
+    }
+
+    /* Price and Buy Button */
+    #ceramic-collection .product-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    #ceramic-collection .product-price {
+      color: #ad5035;
+      font-size: 21px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    #ceramic-collection .buy-now-btn {
+      background: #ad5035;
+      color: #fff;
+      border: 1px solid #ad5035;
+      border-radius: 8px;
+      padding: 14px 25px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    #ceramic-collection .buy-now-btn:hover {
+      background: #873b27;
+      border-color: #873b27;
+      transform: translateY(-2px);
+    }
+
+    #ceramic-collection .buy-now-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Success Notification */
+    #buy-success-toast {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #198754;
+      color: #fff;
+      padding: 16px 24px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+
+    #buy-success-toast.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #buy-success-toast i {
+      font-size: 20px;
+    }
+
+    /* Dark Mode */
+    body.dark-mode #ceramic-collection .product-card {
+      background: #24211f;
+      border-color: #443a33;
+    }
+
+    body.dark-mode #ceramic-collection .card-body h3 {
+      color: #f5eee7;
+    }
+
+    body.dark-mode #ceramic-collection .card-body p {
+      color: #c5b8ac;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      #ceramic-collection .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      #ceramic-collection {
+        padding: 40px 0;
+      }
+
+      #ceramic-collection .collection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      #ceramic-collection .card-image {
+        height: 160px;
+      }
+
+      #ceramic-collection .card-body {
+        padding: 14px 12px 15px;
+      }
+
+      #ceramic-collection .card-meta {
+        font-size: 10px;
+        margin-bottom: 8px;
+      }
+
+      #ceramic-collection .card-body h3 {
+        font-size: 16px;
+        line-height: 1.4;
+      }
+
+      #ceramic-collection .card-body p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      #ceramic-collection .product-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      #ceramic-collection .product-price {
+        font-size: 18px;
+      }
+
+      #ceramic-collection .buy-now-btn {
+        width: 100%;
+        padding: 11px 8px;
+        font-size: 13px;
+      }
+
+      #buy-success-toast {
+        left: 15px;
+        right: 15px;
+        bottom: 20px;
+        justify-content: center;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      #ceramic-collection .card-image {
+        height: 135px;
+      }
+
+      #ceramic-collection .card-body {
+        padding: 12px 9px;
+      }
+
+      #ceramic-collection .card-body h3 {
+        font-size: 14px;
+      }
+
+      #ceramic-collection .card-body p {
+        font-size: 12px;
+      }
+
+      #ceramic-collection .product-price {
+        font-size: 16px;
+      }
+
+      #ceramic-collection .buy-now-btn {
+        font-size: 12px;
+        padding: 10px 5px;
+      }
+    }
+  </style>
+
+  <div class="container-custom">
+    <div class="section-heading" data-animate>
+      <span class="eyebrow">HANDCRAFTED WITH LOVE</span>
+      <h2>Explore Our Ceramic Collection</h2>
+      <p>
+        Discover thoughtfully handcrafted ceramic pieces for your everyday
+        spaces.
+      </p>
+    </div>
+
+    <div class="collection-grid">
+      <!-- Product 1 -->
+      <div class="product-card" data-animate>
+        <div class="card-image">
+          <img
+            src="https://images.pexels.com/photos/6766713/pexels-photo-6766713.jpeg"
+            alt="Rustic Ceramic Bowl"
+          />
+        </div>
+
+        <div class="card-body">
+          <div class="card-meta">Handmade Stoneware</div>
+          <h3>Rustic Ceramic Bowl</h3>
+          <p>
+            A beautifully textured bowl designed for everyday dining and
+            serving.
+          </p>
+
+          <div class="product-actions">
+            <span class="product-price">₹750</span>
+            <button class="buy-now-btn" type="button">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card" data-animate>
+        <div class="card-image">
+          <img
+            src="https://images.pexels.com/photos/37269422/pexels-photo-37269422.jpeg"
+            alt="Organic Clay Vase"
+          />
+        </div>
+
+        <div class="card-body">
+          <div class="card-meta">Decor Collection</div>
+          <h3>Organic Clay Vase</h3>
+          <p>
+            An elegant handcrafted vase that brings natural warmth to any living
+            space.
+          </p>
+
+          <div class="product-actions">
+            <span class="product-price">₹1,250</span>
+            <button class="buy-now-btn" type="button">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card" data-animate>
+        <div class="card-image">
+          <img
+            src="https://images.pexels.com/photos/33033797/pexels-photo-33033797.jpeg"
+            alt="Artisan Dinner Plate"
+          />
+        </div>
+
+        <div class="card-body">
+          <div class="card-meta">Dining Collection</div>
+          <h3>Artisan Dinner Plate</h3>
+          <p>
+            A minimal ceramic plate with a natural for beautiful dining
+            experiences.
+          </p>
+
+          <div class="product-actions">
+            <span class="product-price">₹950</span>
+            <button class="buy-now-btn" type="button">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card" data-animate>
+        <div class="card-image">
+          <img
+            src="https://images.pexels.com/photos/5566964/pexels-photo-5566964.jpeg"
+            alt="Clay Serving Bowl"
+          />
+        </div>
+
+        <div class="card-body">
+          <div class="card-meta">Tableware Collection</div>
+          <h3>Clay Serving Bowl</h3>
+          <p>
+            A versatile handcrafted serving bowl with a warm and earthy
+            appearance.
+          </p>
+
+          <div class="product-actions">
+            <span class="product-price">₹1,100</span>
+            <button class="buy-now-btn" type="button">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card" data-animate>
+        <div class="card-image">
+          <img
+            src="https://images.pexels.com/photos/6739699/pexels-photo-6739699.jpeg"
+            alt="Minimal Clay Decor"
+          />
+        </div>
+
+        <div class="card-body">
+          <div class="card-meta">Home Decor</div>
+          <h3>Minimal Clay Decor</h3>
+          <p>
+            A simple decorative ceramic piece that adds character to your home.
+          </p>
+
+          <div class="product-actions">
+            <span class="product-price">₹850</span>
+            <button class="buy-now-btn" type="button">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card" data-animate>
+        <div class="card-image">
+          <img
+            src="https://images.pexels.com/photos/14918462/pexels-photo-14918462.jpeg"
+            alt="Artisan Pottery Set"
+          />
+        </div>
+
+        <div class="card-body">
+          <div class="card-meta">Exclusive Collection</div>
+          <h3>Artisan Pottery Set</h3>
+          <p>
+            A carefully crafted pottery set designed to elevate your everyday
+            table.
+          </p>
+
+          <div class="product-actions">
+            <span class="product-price">₹1,850</span>
+            <button class="buy-now-btn" type="button">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="product-card" data-animate>
+        <div class="card-image">
+          <img
+            src="https://images.pexels.com/photos/38733492/pexels-photo-38733492.jpeg"
+            alt="Artisan Clay Planter"
+          />
+        </div>
+
+        <div class="card-body">
+          <div class="card-meta">Garden Collection</div>
+          <h3>Artisan Clay Planter</h3>
+          <p>
+            A handcrafted clay planter that brings a natural touch to your
+            indoor spaces.
+          </p>
+
+          <div class="product-actions">
+            <span class="product-price">₹1,050</span>
+            <button class="buy-now-btn" type="button">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="product-card" data-animate>
+        <div class="card-image">
+          <img
+            src="https://images.pexels.com/photos/40895359/pexels-photo-40895359.jpeg"
+            alt="Earth Tone Ceramic Set"
+          />
+        </div>
+
+        <div class="card-body">
+          <div class="card-meta">Premium Collection</div>
+          <h3>Earth Ceramic Set</h3>
+          <p>
+            A beautiful earthy ceramic set with a timeless handcrafted finish.
+          </p>
+
+          <div class="product-actions">
+            <span class="product-price">₹2,100</span>
+            <button class="buy-now-btn" type="button">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Notification -->
+  <div id="buy-success-toast" role="status" aria-live="polite">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>Successfully selected!</span>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const collection = document.getElementById("ceramic-collection");
+      const toast = document.getElementById("buy-success-toast");
+
+      if (!collection || !toast) return;
+
+      let toastTimer;
+
+      collection.addEventListener("click", function (event) {
+        const button = event.target.closest(".buy-now-btn");
+
+        if (!button) return;
+
+        clearTimeout(toastTimer);
+
+        toast.classList.add("show");
+
+        toastTimer = setTimeout(function () {
+          toast.classList.remove("show");
+        }, 3000);
+      });
+    });
+  </script>
+</section>
 <!-- =====================================================
      SECTION 2: FEATURED COLLECTIONS
 ===================================================== -->
@@ -787,7 +1283,6 @@
     </div>
 
 </section>
-
 
 <!-- =====================================================
      SECTION 3: COFFEE MUGS
@@ -1340,7 +1835,7 @@
             <article class="content-card" data-animate>
                 <div class="card-image artist-image">
                     <img
-                        src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=900&q=85"
+                        src="https://images.pexels.com/photos/19850174/pexels-photo-19850174.jpeg"
                         alt="Kavya Sen shaping a stoneware vessel at the pottery wheel"
                         loading="lazy"
                     >
@@ -1360,7 +1855,7 @@
             <article class="content-card" data-animate>
                 <div class="card-image artist-image">
                     <img
-                        src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=900&q=85"
+                        src="https://images.pexels.com/photos/13554733/pexels-photo-13554733.jpeg"
                         alt="Marcus Vance carving details into a handcrafted clay form"
                         loading="lazy"
                     >
@@ -1380,7 +1875,7 @@
             <article class="content-card" data-animate>
                 <div class="card-image artist-image">
                     <img
-                        src="https://images.unsplash.com/photo-1525974160448-038dacadcc71?auto=format&fit=crop&w=900&q=85"
+                        src="https://images.pexels.com/photos/29312155/pexels-photo-29312155.jpeg"
                         alt="Nadia Lin finishing delicate ceramic bowls"
                         loading="lazy"
                     >

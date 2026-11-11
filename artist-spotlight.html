@@ -170,61 +170,208 @@
 
     </header>
 
-<section class="section">
+<section class="section artist-hero">
 
-    <div class="container-custom hero-grid">
+    <div class="artist-hero-overlay"></div>
 
-        <div class="hero-image">
+    <div class="artist-hero-content">
 
-            <img
-                src="https://images.pexels.com/photos/18702624/pexels-photo-18702624.jpeg"
-                alt="Ceramic artist working in a studio"
-            >
+        <span class="eyebrow">
+            The Beauty of Handmade
+        </span>
 
-        </div>
+        <h1>
+            Crafted with Care,
+            <span>Made with Love.</span>
+        </h1>
 
+        <p>
+            Discover the beauty of handmade ceramics, where every shape,
+            texture, and detail tells a unique story. Our artists bring
+            creativity and craftsmanship together to create pieces
+            that make everyday moments special.
+        </p>
 
-        <div class="hero-content">
-
-            <span class="eyebrow">
-                Artist Spotlight
-            </span>
-
-            <h1>
-                Meet Meera
-                <span>Krishnan.</span>
-            </h1>
-
-            <p>
-                Inspired by the textures of nature
-                and the quiet beauty of everyday
-                objects, Meera creates ceramics that
-                combine expressive forms with
-                practical functionality.
-            </p>
-
-            <p>
-                Her work celebrates natural surfaces,
-                subtle variations, and the individuality
-                that makes handmade ceramics special.
-            </p>
-
-            <a
-                href="shop.html"
-                class="btn-custom"
-            >
-
-                Explore Her Collection
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-        </div>
+        <a href="shop.html" class="btn-custom">
+            Discover Our Collection
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
     </div>
 
 </section>
+
+<style>
+
+.artist-hero {
+    position: relative;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+
+    background-image: url('https://images.pexels.com/photos/4992451/pexels-photo-4992451.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+/* Dark Overlay */
+
+.artist-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(35, 27, 21, 0.58);
+}
+
+/* Center Content */
+
+.artist-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Eyebrow */
+
+.artist-hero-content .eyebrow {
+    display: inline-block;
+    color: #e8c9a5;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Heading */
+
+.artist-hero-content h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    font-weight: 600;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.artist-hero-content h1 span {
+    display: block;
+    color: #e8c9a5;
+}
+
+/* Description */
+
+.artist-hero-content p {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #f5eee7;
+}
+
+/* Primary CTA */
+
+.artist-hero-content .btn-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: 12px;
+    padding: 15px 32px;
+
+    background: #b77b50;
+    color: #ffffff;
+
+    border: 1px solid #b77b50;
+    border-radius: 4px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.artist-hero-content .btn-custom:hover {
+    background: #94613f;
+    border-color: #94613f;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.artist-hero-content .btn-custom i {
+    transition: transform 0.3s ease;
+}
+
+.artist-hero-content .btn-custom:hover i {
+    transform: translateX(5px);
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+    .artist-hero {
+        min-height: 580px;
+        padding: 80px 25px;
+        background-position: center;
+    }
+
+    .artist-hero-content {
+        max-width: 620px;
+    }
+
+    .artist-hero-content h1 {
+        font-size: 44px;
+    }
+
+    .artist-hero-content p {
+        font-size: 15px;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 425px) {
+
+    .artist-hero {
+        min-height: 540px;
+        padding: 65px 20px;
+        background-position: center;
+    }
+
+    .artist-hero-content h1 {
+        font-size: 35px;
+        line-height: 1.25;
+    }
+
+    .artist-hero-content p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .artist-hero-content .eyebrow {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .artist-hero-content .btn-custom {
+        padding: 13px 22px;
+        font-size: 13px;
+    }
+
+}
+
+</style>
 <!-- =====================================================
      SECTION 1: FEATURED ARTISTS
 ===================================================== -->
@@ -241,7 +388,7 @@
     <div class="grid-3">
 
         <div class="content-card artist-card" data-animate>
-            <img src="https://images.pexels.com/photos/31875680/pexels-photo-31875680.jpeg"
+            <img src="https://images.pexels.com/photos/4241343/pexels-photo-4241343.jpeg"
                  alt="Ceramic artist creating handmade pottery"
                  class="artist-image">
 
@@ -258,7 +405,7 @@
         </div>
 
         <div class="content-card artist-card" data-animate>
-            <img src="https://images.pexels.com/photos/6243336/pexels-photo-6243336.jpeg"
+            <img src="https://images.pexels.com/photos/36731513/pexels-photo-36731513.jpeg"
                  alt="Artist shaping a ceramic vase"
                  class="artist-image">
 
@@ -275,7 +422,7 @@
         </div>
 
         <div class="content-card artist-card" data-animate>
-            <img src="https://images.pexels.com/photos/38456398/pexels-photo-38456398.jpeg"
+            <img src="https://images.pexels.com/photos/9304295/pexels-photo-9304295.jpeg"
                  alt="Handcrafted decorative ceramic artwork"
                  class="artist-image">
 
@@ -653,40 +800,151 @@
      SECTION 6: WORK WITH OUR ARTISTS
 ===================================================== -->
 <section class="section">
+
     <div class="container-custom">
 
-        <div class="cta-banner text-center" data-animate style="display: flex; justify-content: center; align-items: center; text-align: center; padding: 60px 24px;">
-            <div class="cta-banner-content" style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                
-                <span class="eyebrow" style="display: inline-block; margin: 0 auto 12px;">
+        <div class="cta-banner text-center" data-animate>
+
+            <div class="cta-banner-content">
+
+                <span class="eyebrow">
                     Let's Create Something Meaningful
                 </span>
 
-                <h2 style="text-align: center; margin: 0 auto 14px; width: 100%;">
+                <h2>
                     Have a Special Piece in Mind?
                 </h2>
 
-                <p style="text-align: center; max-width: 580px; margin: 0 auto 28px; line-height: 1.7;">
+                <p>
                     Looking for a custom ceramic piece, a thoughtful gift,
                     or a pottery workshop? Connect with our artists to discuss your ideas.
                 </p>
 
-                <!-- Centered Buttons -->
-                <div class="d-flex flex-wrap justify-content-center gap-3" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px; width: 100%; margin: 0 auto;">
-                    <a href="contact.html" class="btn-custom" style="display: inline-flex; align-items: center; justify-content: center;">
+                <div class="cta-buttons">
+
+                    <!-- Primary CTA -->
+                    <a href="contact.html" class="btn-custom primary-cta">
                         Contact Our Artists
+                        <i class="fa-solid fa-arrow-right"></i>
                     </a>
 
-                    <a href="shop.html" class="btn-custom" style="display: inline-flex; align-items: center; justify-content: center;">
+                    <!-- Secondary CTA -->
+                    <a href="shop.html" class="btn-custom secondary-cta">
                         Explore Our Shop
                     </a>
+
                 </div>
 
             </div>
+
         </div>
 
     </div>
+
 </section>
+
+<style>
+
+.cta-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 65px 24px;
+}
+
+.cta-banner-content {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cta-banner-content .eyebrow {
+    margin-bottom: 12px;
+}
+
+.cta-banner-content h2 {
+    margin: 0 auto 14px;
+    width: 100%;
+}
+
+.cta-banner-content p {
+    max-width: 580px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+}
+
+.cta-buttons .btn-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Primary CTA */
+.cta-buttons .primary-cta {
+    background: #b77b50;
+    border: 1px solid #b77b50;
+    color: #ffffff;
+}
+
+.cta-buttons .primary-cta:hover {
+    background: #94613f;
+    border-color: #94613f;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Secondary CTA */
+.cta-buttons .secondary-cta {
+    background: transparent;
+    border: 1px solid #b77b50;
+    color: #b77b50;
+}
+
+.cta-buttons .secondary-cta:hover {
+    background: #b77b50;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Mobile */
+@media (max-width: 425px) {
+
+    .cta-banner {
+        padding: 45px 18px;
+    }
+
+    .cta-buttons {
+        gap: 12px;
+    }
+
+    .cta-buttons .btn-custom {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+}
+
+</style>
 
     <!-- ================= FOOTER ================= -->
 
